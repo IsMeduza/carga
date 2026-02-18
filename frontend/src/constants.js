@@ -9,7 +9,7 @@ export const BRAND_NAME = 'Nombre';
 export const IS_LOCALHOST = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 export const STATIC_URL = IS_LOCALHOST ? 'http://localhost:5500' : '';
 export const LANDING_URL = `${STATIC_URL}/index.html`;
-export const LOGO_URL = `${STATIC_URL}/assets/img/logo.svg`;
+export const LOGO_URL = `${STATIC_URL}/assets/img/assets/img/logo.svg`;
 
 // Títulos de página
 export const PAGE_TITLES = {
