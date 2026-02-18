@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"I:\\\\finiti\\\\frontend\\\\src\"\" 2>/dev/null || echo \"Frontend src not found \")",
+      "Bash(xargs:*)"
+    ]
+  }
+}

@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva funcionalidad: documentación digital CMR - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-7xl mx-auto relative z-10 anim-up" style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="index.html"
+        class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+  
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <span class="text-xs font-bold tracking-widestáá text-slate-500 uppercase mb-4 block ">
+      Novedades
+    </span>
+    <h1 class="text-4xl md:text-[56px] leading-[1.1] font-semibold text-[#1A1A1A] tracking-tight  mb-8 anim-scale delay-2">
+      Nueva funcionalidad: documentación digital CMR
+    </h1>
+    <div class="flex items-center gap-4 text-sm text-slate-500 mb-12 anim-up delay-3">
+      <span>5 de julio de 2026</span>
+      <span>•</span>
+      <span>4 minutos de lectura</span>
+    </div>
+    
+    <div class="prose prose-lg max-w-none space-y-8 anim-up delay-4">
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          ¡Por fin adiós al papel!
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          estááamos muy orgullosos de anunciar nuestáára nueva funcionalidad de documentación digital CMR. A partir de hoy, puedes generar, firmar y enviar cartas de porte digitalmente directamente desde la plataforma Nombre. estááa innovación representa un ahorro de tiempo y recursos significativo para transportistas y empresas.
+        </p>
+        <div class="bg-green-50 border border-green-100 rounded-xl p-6">
+          <p class="text-[16px] text-green-800 font-medium">
+            ✨ <strong>Lo más importante:</strong> Cumple con toda la normativa europea y es 100% legalmente válido.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          ¿quéé es el CMR digital?
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          La carta de porte CMR (Convention Relative au Contrat de Transporte International de Marchandises par Route) es el documento esencial en el transporte internacional de mercancías por carretera. Nuestáára versión digital mantiene toda la validez legal del documento tradicional pero con las ventajas de la tecnología:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-50 rounded-xl p-6">
+            <h4 class="font-semibold text-blue-900 mb-3">📄 CMR tradicional</h4>
+            <ul class="space-y-2 text-sm text-blue-700">
+              <li>• Documento físico en papel</li>
+              <li>• Firma manuscrita requéerida</li>
+              <li>• Riesgo de pérdida o daño</li>
+              <li>• Almacenamiento físico necesario</li>
+              <li>• Difícil localización histórica</li>
+            </ul>
+          </div>
+          <div class="bg-green-50 rounded-xl p-6">
+            <h4 class="font-semibold text-green-900 mb-3">💻 CMR digital Nombre</h4>
+            <ul class="space-y-2 text-sm text-green-700">
+              <li>• Documento electrónico seguro</li>
+              <li>• Firma digital certificada</li>
+              <li>• Backup automático en la nube</li>
+              <li>• Búsquéeda instantánea</li>
+              <li>• Compartido con todas las partes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Beneficios clave para tu negocio
+        </h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Ahorro de 85% en tiempo administrativo</h3>
+              <p class="text-[16px] text-slate-600">Generar y gestááionar un CMR digital toma menos de 2 minutos frente a los 15 minutos del proceso tradicional.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Reducción de costes de papel</h3>
+              <p class="text-[16px] text-slate-600">Ahorra aproximadamente 120€ al mes en papel, impresión y almacenamiento físico.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Seguridad y cumplimiento normativo</h3>
+              <p class="text-[16px] text-slate-600">Cumple con el Reglamento eCMR europeo y tiene validez legal en todos los países miembros de la UE.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          ¿Cómo funciona en 3 pasos?
+        </h2>
+        <div class="space-y-6">
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-lg shrink-0">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Genera el CMR</h3>
+              <p class="text-[16px] text-slate-600">Completa los datos del transporte en nuestááro formulario intuitivo. La plataforma autocompleta información habitual para ahorrarte tiempo.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-lg shrink-0">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Firma digitalmente</h3>
+              <p class="text-[16px] text-slate-600">Todas las partes (remitente, transportista, destááinatario) firman digitalmente desde sus dispositivos. La firma es certificada y legalmente válida.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-lg shrink-0">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Comparte y archiva</h3>
+              <p class="text-[16px] text-slate-600">El documento se comparte automáticamente con todas las partes y se archiva de forma segura en tu panel. Accede a él en cualquéier momento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Integración perfecta con tu flujo de trabajo
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          El CMR digital se integra perfectamente con el restááo de funcionalidades de Nombre:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
+            <h4 class="font-semibold text-blue-900 mb-2">🚛 Seguimiento GPS</h4>
+            <p class="text-sm text-blue-700">El CMR se actualiza automáticamente con la ubicación del vehículo</p>
+          </div>
+          <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+            <h4 class="font-semibold text-green-900 mb-2">📸 Fotos de entrega</h4>
+            <p class="text-sm text-green-700">Adjunta pruebas fotográficas directamente al CMR</p>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
+            <h4 class="font-semibold text-purple-900 mb-2">💰 Facturación automática</h4>
+            <p class="text-sm text-purple-700">Genera facturas a partir de los CMR completados</p>
+          </div>
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-4 border border-orange-100">
+            <h4 class="font-semibold text-orange-900 mb-2">📊 estááadísticas</h4>
+            <p class="text-sm text-orange-700">Analiza tus entregas y optimiza rutas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          ¿quéé dicen nuestááros usuarios?
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                MG
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">María García - Transportista</h4>
+                <p class="text-sm text-slate-600">15 años transportando por Europa</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-slate-700 italic">
+              "El CMR digital ha cambiado completamente mi forma de trabajar. Antes perdía horas cada semana con papeles. Ahora todo estááá en mi móvil, firmado y archivado. Es increíble."
+            </p>
+          </div>
+          
+          <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
+                JR
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Juan Rodríguez - Logistics Manager</h4>
+                <p class="text-sm text-slate-600">Empresa de exportación</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-slate-700 italic">
+              "La trazabilidad quée nos da el CMR digital es fundamental para nuestáára operación. Sabemos exactamente dónde estááá cada mercancía y tenemos toda la documentación al instante."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Disponible ya en tu plataforma
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          La funcionalidad de CMR digital estááá disponible para todos nuestááros usuarios sin coste adicional. Forma parte de nuestááro compromiso de seguir innovando para hacer el transporte más eficiente y sostenible.
+        </p>
+        <div class="bg-[#1A1A1A] text-white rounded-xl p-6 mt-8">
+          <p class="text-[16px] font-medium mb-3">
+            🚀 <strong>¿Listo para digitalizar tu documentación?</strong>
+          </p>
+          <p class="text-sm mb-4">
+            Únete a los cientos de transportistas y empresas quée ya estááán ahorrando tiempo y dinero con el CMR digital de Nombre.
+          </p>
+          <a href="register.html" class="inline-flex items-center gap-2 bg-white text-[#1A1A1A] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-100 transition-all">
+            Probar CMR digital gratis
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombre supera los 2.000 transportistas activos - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up"
+    style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../../index.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
+      <div class="h-64 bg-gradient-to-br from-[#F2EBE5] via-[#EFE6D8] to-[#9AC1EB] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" class="opacity-60">
+          <path d="M16 7h6v6"></path>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
+          28 Jun 2026
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+          Nombre supera los 2.000 transportistas activos
+        </h1>
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-slate-700 leading-relaxed mb-6">
+            Hoy celebramos un hito importante en nuestro crecimiento: Nombre ha superado los 2.000 transportistas 
+            activos en nuestra plataforma. Este logro no solo representa un número impresionante, sino que demuestra 
+            la confianza que el sector logístico español ha depositado en nuestro modelo de negocio y tecnología.
+          </p>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Un crecimiento sostenible y de calidad</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Alcanzar la cifra de 2.000 transportistas activos no ha sido un proceso rápido, pero sí sostenible. 
+            Hemos priorizado siempre la calidad sobre la cantidad, asegurando que cada transportista en nuestra 
+            plataforma cumpla con nuestros estándares de excelencia:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Verificación rigurosa:</strong> Cada transportista pasa por un proceso de validación completo</li>
+            <li><strong>Seguros adecuados:</strong> Verificación de cobertura de responsabilidad civil y mercancías</li>
+            <li><strong>Experiencia comprobada:</strong> Mínimo de 2 años de experiencia en el sector</li>
+            <li><strong>Valoración positiva:</strong> Mantenimiento de calificaciones superiores a 4.5/5</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">El impacto de nuestra comunidad</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestros 2.000+ transportistas representan una red diversa y capacitada que cubre todo el territorio 
+            español. Esta comunidad genera un impacto significativo en el sector:
+          </p>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Cobertura geográfica</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Presencia en las 17 comunidades autónomas</li>
+            <li>Cobertura del 98% de los municipios españoles</li>
+            <li>Especialización en rutas nacionales e internacionales</li>
+            <li>Flota diversificada: furgonetas, camiones, tráileres especializados</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Capacidad operativa</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Más de 15.000 vehículos disponibles diariamente</li>
+            <li>Capacidad total superior a 150.000 toneladas</li>
+            <li>Realización de más de 50.000 transportes mensuales</li>
+            <li>Tiempo medio de respuesta: menos de 15 minutos</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Historia de crecimiento</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestra trayectoria muestra un crecimiento constante y saludable:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>2024:</strong> Lanzamiento con 50 transportistas fundadores</li>
+            <li><strong>2025:</strong> Superamos los 500 transportistas activos</li>
+            <li><strong>Principios 2026:</strong> Alcanzamos 1.000 transportistas</li>
+            <li><strong>Junio 2026:</strong> Superamos los 2.000 transportistas activos</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">¿Qué hace diferente a Nombre?</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestro éxito se basa en tres pilares fundamentales que nos diferencian de otras plataformas:
+          </p>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Modelo de suscripción equitativo</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            A diferencia del modelo de comisiones tradicional, nuestro sistema de cuota fija beneficia a todos:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Previsibilidad financiera para transportistas</li>
+            <li>Acceso ilimitado a oportunidades de negocio</li>
+            <li>Relaciones a largo plazo con empresas clientes</li>
+            <li>Cero costes ocultos o porcentajes variables</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Tecnología avanzada</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestra plataforma está diseñada por y para profesionales del transporte:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Algoritmos de matching inteligente</li>
+            <li>Gestión documental digital completa</li>
+            <li>Seguimiento GPS en tiempo real</li>
+            <li>Analytics y métricas de rendimiento</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Soporte y comunidad</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            No somos solo una tecnología, somos una comunidad:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Soporte 24/7 en español</li>
+            <li>Formación continua y recursos educativos</li>
+            <li>Eventos de networking y colaboración</li>
+            <li>Programa de beneficios y ventajas exclusivas</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Testimonios de nuestra comunidad</h2>
+          
+          <blockquote class="border-l-4 border-slate-300 pl-4 my-6 italic text-slate-600">
+            "Nombre ha transformado mi negocio. Pasé de depender de intermediarios a tener acceso directo 
+            a empresas de calidad, con ingresos predecibles y sin sorpresas."
+            <footer class="text-sm text-slate-500 mt-2">— Miguel Rodríguez, Transportista desde 2018</footer>
+          </blockquote>
+          
+          <blockquote class="border-l-4 border-slate-300 pl-4 my-6 italic text-slate-600">
+            "La plataforma es intuitiva y el soporte es excepcional. En menos de un año he duplicado mi 
+            volumen de negocio gracias a las oportunidades que encuentro aquí."
+            <footer class="text-sm text-slate-500 mt-2">— Ana Martínez, Propietaria de flota</footer>
+          </blockquote>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Impacto económico y social</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestro crecimiento no solo beneficia a nuestros usuarios, sino que tiene un impacto positivo 
+            en la economía española:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Generación de más de 3.000 empleos directos e indirectos</li>
+            <li>Contribución al PIB del sector logístico español</li>
+            <li>Digitalización y modernización del transporte</li>
+            <li>Reducción de la huella de carbono mediante optimización de rutas</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Próximos objetivos</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Este hito es solo el comienzo. Nuestros objetivos para el resto de 2026 y 2027 incluyen:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Alcanzar 5.000 transportistas activos antes de fin de 2026</li>
+            <li>Expansión internacional: Portugal y Francia</li>
+            <li>Lanzamiento de nuevas funcionalidades de IA</li>
+            <li>Programa de certificación de excelencia operativa</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Agradecimiento a nuestra comunidad</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Este logro pertenece a cada uno de nuestros 2.000+ transportistas y a las empresas que confían 
+            en nosotros diariamente. Su feedback, su lealtad y su compromiso son el motor de nuestro crecimiento.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Seguimos trabajando para construir la plataforma de transporte más grande y fiable de España, 
+            donde la tecnología y el talento humano se unen para crear un sector logístico más eficiente, 
+            transparente y sostenible.
+          </p>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">¿Quieres unirte a nuestra comunidad?</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Si eres un transportista profesional y quieres formar parte de la comunidad logística más 
+            importante de España, te invitamos a descubrir cómo Nombre puede ayudarte a hacer crecer tu negocio.
+          </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-500">
+              Publicado el 28 de Junio de 2026
+            </div>
+            <div class="flex gap-4">
+              <a href="../blog.html" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                ← Volver al blog
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>

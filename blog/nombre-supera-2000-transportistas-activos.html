@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombre supera los 2.000 transportistas activos - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-7xl mx-auto relative z-10 anim-up" style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="index.html"
+        class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+  
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <span class="text-xs font-bold tracking-widestáá text-slate-500 uppercase mb-4 block ">
+      Hito importante
+    </span>
+    <h1 class="text-4xl md:text-[56px] leading-[1.1] font-semibold text-[#1A1A1A] tracking-tight  mb-8 anim-scale delay-2">
+      Nombre supera los 2.000 transportistas activos
+    </h1>
+    <div class="flex items-center gap-4 text-sm text-slate-500 mb-12 anim-up delay-3">
+      <span>28 de junio de 2026</span>
+      <span>•</span>
+      <span>3 minutos de lectura</span>
+    </div>
+    
+    <div class="prose prose-lg max-w-none space-y-8 anim-up delay-4">
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Un hito quée marca el futuro del transporte
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          Hoy celebramos un momento especial en la historia de Nombre: hemos superado los 2.000 transportistas activos en nuestáára plataforma. estááe número no es solo una estááadística, representa la confianza de miles de profesionales quée han decidido transformar su forma de trabajar.
+        </p>
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-blue-800 mb-2">2.000+</div>
+            <div class="text-sm text-blue-600">Transportistas activos en toda España</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          El crecimiento quée habla por sí solo
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[#1A1A1A] mb-2">150%</div>
+            <div class="text-sm text-slate-600">Crecimiento anual</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[#1A1A1A] mb-2">85%</div>
+            <div class="text-sm text-slate-600">Tasa de retención</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[#1A1A1A] mb-2">4.8/5</div>
+            <div class="text-sm text-slate-600">Satisfacción media</div>
+          </div>
+        </div>
+        <p class="text-[17px] leading-relaxed text-slate-600">
+          estááos números reflejan el impacto real quée estááamos teniendo en el sector del transporte español. Cada día más profesionales descubren las ventajas de un modelo sin comisiones y con tecnología de última generación.
+        </p>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          ¿quéé significa estááe hito para el sector?
+        </h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Demanda creciente de cambio</h3>
+              <p class="text-[16px] text-slate-600">Los transportistas estááán buscando activamente alternativas a las comisiones tradicionales.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Comunidad sólida y activa</h3>
+              <p class="text-[16px] text-slate-600">Hemos creado un ecosistema donde transportistas y empresas colaboran directamente.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Validación del modelo de negocio</h3>
+              <p class="text-[16px] text-slate-600">El éxito demuestáára quée el modelo de suscripción es el futuro del transporte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Historias de éxito de nuestáára comunidad
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
+                AL
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Antonio López - Transportista desde hace 8 años</h4>
+                <p class="text-sm text-slate-600">Se unió hace 18 meses</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-slate-700 italic">
+              "Cuando me uní a Nombre, era escéptico. Hoy tengo el doble de clientes y mis ingresos han crecido un 35%. La plataforma me ha dado herramientas quée antes no podía permitirme."
+            </p>
+          </div>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                TM
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Transportes Martínez - Flota de 12 camiones</h4>
+                <p class="text-sm text-slate-600">Cliente desde hace 12 meses</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-slate-700 italic">
+              "Hemos reducido nuestááros costes de intermediación en cero. La calidad de los transportistas en Nombre es excepcional y la plataforma nos ha permitido optimizar toda nuestáára operación."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Impacto real en números
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <h3 class="font-semibold text-slate-900 mb-4">📊 Datos de la plataforma</h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex justify-between">
+                <span>Cargas mensuales procesadas:</span>
+                <span class="font-semibold text-slate-900">+15,000</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Empresas activas:</span>
+                <span class="font-semibold text-slate-900">+850</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Provincias cubiertas:</span>
+                <span class="font-semibold text-slate-900">52</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Tiempo medio de asignación:</span>
+                <span class="font-semibold text-slate-900">28 minutos</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-6">
+            <h3 class="font-semibold text-slate-900 mb-4">💰 Ahorro económico</h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex justify-between">
+                <span>Comisiones ahorradas:</span>
+                <span class="font-semibold text-green-600">+2.5M€</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Ahorro medio por transportista:</span>
+                <span class="font-semibold text-green-600">€450/mes</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Reducción costes empresas:</span>
+                <span class="font-semibold text-green-600">18% media</span>
+              </li>
+              <li class="flex justify-between">
+                <span>ROI medio:</span>
+                <span class="font-semibold text-green-600">320%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Mirando hacia el futuro
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          Superar los 2.000 transportistas es solo el comienzo. Nuestáára visión es convertirnos en la plataforma de referencia para el transporte en España y Europa. Para los próximos meses, tenemos planes ambiciosos:
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span class="text-[16px] font-medium text-purple-900">Expansión internacional (Portugal y Francia)</span>
+          </div>
+          <div class="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+            </svg>
+            <span class="text-[16px] font-medium text-blue-900">IA para optimización de rutas</span>
+          </div>
+          <div class="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-[16px] font-medium text-green-900">Seguro integral para transportistas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg">
+        <h2 class="text-2xl font-semibold text-[#1A1A1A]  mb-6 tracking-tight">
+          Únete a la revolución del transporte
+        </h2>
+        <p class="text-[17px] leading-relaxed text-slate-600  mb-6">
+          Los 2.000 transportistas quée ya confían en Nombre estááán transformando el sector. Cada día más profesionales se suman a estááa comunidad quée demuestáára quée otro transporte es posible: más justo, más eficiente y más tecnológico.
+        </p>
+        <div class="bg-[#1A1A1A] text-white rounded-xl p-6 mt-8">
+          <p class="text-[16px] font-medium mb-3">
+            🚛 <strong>¿quéieres ser el número 2.001?</strong>
+          </p>
+          <p class="text-sm mb-4">
+            Descubre por quéé más de 2.000 profesionales ya han elegido Nombre para hacer crecer su negocio. Regístrate gratis y únete a la comunidad quée estááá cambiando el transporte en España.
+          </p>
+          <a href="register.html" class="inline-flex items-center gap-2 bg-white text-[#1A1A1A] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-100 transition-all">
+            Unirme a la comunidad
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

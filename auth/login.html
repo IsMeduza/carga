@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión - Nombre</title>
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -198,6 +198,14 @@
       animation: btnSweep 0.6s ease forwards;
     }
 
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin {
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+
     @keyframes btnSweep {
       to {
         left: 150%;
@@ -206,7 +214,7 @@
   </style>
 </head>
 
-<body class="antialiased min-h-screen selection:bg-white/20 selection:text-white text-slate-800">
+<body class="antialiased min-h-screen selection:bg-black selection:text-white text-slate-800">
 
   <div class="min-h-screen flex flex-col lg:flex-row h-screen">
 
@@ -226,8 +234,8 @@
         <div class="max-w-lg mx-auto space-y-8">
 
           <!-- Logo -->
-          <a href="index.html" class="inline-flex items-center gap-2.5 group anim-up">
-            <img src="assets/logo-white.svg" alt="Nombre"
+          <a href="../index.html" class="inline-flex items-center gap-2.5 group anim-up">
+            <img src="../assets/img/logo-white.svg" alt="Nombre"
               class="w-9 h-9 transition-transform duration-300 group-hover:scale-110 nav-logo-mark">
             <span class="text-xl font-extrabold tracking-tight text-white">Nombre</span>
           </a>
@@ -396,8 +404,8 @@
 
         <!-- Mobile logo -->
         <div class="lg:hidden text-center mb-6 anim-up">
-          <a href="index.html" class="inline-flex items-center gap-2.5">
-            <img src="assets/logo-white.svg" alt="Nombre" class="w-8 h-8 nav-logo-mark">
+          <a href="../index.html" class="inline-flex items-center gap-2.5">
+            <img src="../assets/img/logo-white.svg" alt="Nombre" class="w-8 h-8 nav-logo-mark">
             <span class="text-xl font-extrabold text-slate-900 tracking-tight">Nombre</span>
           </a>
         </div>
@@ -408,7 +416,7 @@
 
           <!-- Back -->
           <div class="mb-5">
-            <a href="index.html"
+            <a href="../index.html"
               class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-900 transition-colors font-medium">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -502,6 +510,16 @@
             ¿No tienes cuenta? <a href="register.html" class="font-semibold text-slate-900 hover:underline">Crea una
               gratis</a>
           </p>
+
+          <!-- Demo access -->
+          <p class="text-center text-sm text-slate-400 mt-4 pt-4 border-t border-slate-100">
+            <button type="button" onclick="goToDemo()" class="inline-flex items-center gap-1 hover:text-slate-600 transition-colors cursor-pointer bg-transparent border-none font-inherit">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              Acceder en modo demo (sin login)
+            </button>
+          </p>
         </div>
       </div>
     </div>
@@ -517,6 +535,65 @@
         : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
     }
 
+    // Función para ir al dashboard
+    function goToDashboard() {
+      const ports = [3000, 3001, 3002];
+      const timeout = 2000; // 2 segundos de timeout por puerto
+      
+      async function checkPort(port) {
+        try {
+          const controller = new AbortController();
+          const id = setTimeout(() => controller.abort(), timeout);
+          
+          // Intentar fetch al manifest.json (archivo pequeño que existe en React)
+          const response = await fetch(`http://localhost:${port}/manifest.json`, {
+            method: 'HEAD',
+            signal: controller.signal,
+            mode: 'no-cors'
+          });
+          
+          clearTimeout(id);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      async function findAndNavigate() {
+        for (const port of ports) {
+          console.log(`Probando puerto ${port}...`);
+          const isAvailable = await checkPort(port);
+          
+          if (isAvailable) {
+            console.log(`✓ Puerto ${port} responde, navegando...`);
+            window.location.href = `http://localhost:${port}/dashboard`;
+            return;
+          }
+        }
+        
+        // Si ningún puerto responde, alertar al usuario
+        alert('⚠️ No se encontró el servidor del dashboard.\\n\\nPor favor asegúrate de:\\n1. Iniciar el servidor React: npm start (en la carpeta frontend)\\n2. Esperar a que aparezca "Compiled successfully"\\n3. El servidor normalmente usa el puerto 3000\\n\\nSi usas otro puerto, modifica la URL manualmente.');
+      }
+      
+      findAndNavigate();
+    }
+
+    // Función para acceso demo
+    function goToDemo() {
+      const btn = document.querySelector('button[onclick="goToDemo()"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="animate-spin">↻</span> Conectando...';
+      btn.disabled = true;
+      
+      goToDashboard();
+      
+      // Restaurar botón después de 5 segundos si no se pudo conectar
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 5000);
+    }
+
     document.getElementById('login-form').addEventListener('submit', e => {
       e.preventDefault();
       const fd = new FormData(e.target);
@@ -527,7 +604,7 @@
       });
       if (!ok) return;
       console.log('Login:', Object.fromEntries(fd));
-      window.location.href = 'http://localhost:3000';
+      goToDashboard();
     });
 
     // Testimonial rotation

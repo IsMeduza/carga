@@ -1,4 +1,4 @@
-# Carga - Plataforma PRO de Transporte para Camioneros
+# Nombre - Plataforma PRO de Transporte para Camioneros
 
 ## Problema Original
 Plataforma de transporte de cargas para camioneros en España inspirada en apps como DAT, Trucker Path y Uber Freight.

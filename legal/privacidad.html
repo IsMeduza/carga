@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacidad - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+  <style>
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-4xl mx-auto relative z-10 anim-up"
+    style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../index.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../index.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver
+    </a>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <span class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4 block ">
+      Legal
+    </span>
+    <h1
+      class="text-4xl md:text-[56px] leading-[1.1] font-semibold text-[#1A1A1A] tracking-tight  mb-4 anim-scale delay-2">
+      Política de Privacidad
+    </h1>
+    <p class="text-sm text-slate-500 mb-12 anim-up delay-3">
+      Última actualización: 15 de febrero de 2026
+    </p>
+    <div
+      class="bg-white/60 backdrop-blur-md rounded-[32px] p-8 md:p-12 border border-white/50 shadow-lg space-y-8 anim-up delay-4">
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          1. Responsable del tratamiento
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Nombre Technologies S.L. (en adelante, "Nombre"), con
+          domicilio social en Calle Gran Vía 28, 4ª planta, 28013
+          Madrid, España, y CIF B-12345678, es el responsable del
+          tratamiento de los datos personales que nos facilites.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          2. Datos que recopilamos
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Recopilamos los datos que nos proporcionas directamente al
+          registrarte y usar nuestra plataforma: nombre, email,
+          teléfono, datos de empresa, datos de vehículos (para
+          transportistas), ubicación GPS durante los envíos activos, y
+          datos de facturación. También recopilamos datos de uso de la
+          plataforma de forma automatizada.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          3. Finalidad del tratamiento
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Tus datos se utilizan para: prestar el servicio de conexión
+          entre empresas y transportistas, gestionar tu cuenta, procesar
+          pagos y facturación, seguimiento GPS de envíos, comunicaciones
+          relacionadas con el servicio, y mejora de la plataforma
+          mediante análisis agregados.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          4. Base legal del tratamiento
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          El tratamiento de tus datos se basa en: la ejecución del
+          contrato de servicio, tu consentimiento expreso para
+          comunicaciones comerciales, el cumplimiento de obligaciones
+          legales (facturación, fiscalidad) y nuestro interés legítimo
+          en mejorar el servicio.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          5. Conservación de datos
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Conservamos tus datos personales mientras mantengas tu cuenta
+          activa y durante los plazos legales aplicables tras la baja (5
+          años para datos fiscales). Los datos de ubicación GPS se
+          conservan durante 90 días tras la finalización de cada envío.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          6. Tus derechos
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Puedes ejercer tus derechos de acceso, rectificación,
+          supresión, portabilidad, limitación y oposición al tratamiento
+          enviando un email a privacidad@nombre.es. Responderemos en un
+          plazo máximo de 30 días.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-[#1A1A1A]  mb-3 tracking-tight">
+          7. Contacto
+        </h2>
+        <p class="text-[15px] text-slate-600 leading-relaxed">
+          Para cualquier cuestión relacionada con esta política de
+          privacidad, puedes contactarnos en privacidad@nombre.es o en
+          nuestra dirección postal.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+</html>

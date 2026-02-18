@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo optimizar tus rutas de transporte en España - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up"
+    style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../../index.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
+      <div class="h-64 bg-gradient-to-br from-[#9AC1EB] via-[#C5DFF7] to-[#EFE6D8] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" class="opacity-60">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
+          15 Jul 2026
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+          Cómo optimizar tus rutas de transporte en España
+        </h1>
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-slate-700 leading-relaxed mb-6">
+            La optimización de rutas es fundamental para reducir costes, mejorar la eficiencia y aumentar la satisfacción 
+            del cliente en el sector del transporte. En España, con su extensa red de carreteras y la diversidad geográfica, 
+            una planificación inteligente puede marcar la diferencia entre el éxito y el fracaso operativo.
+          </p>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Análisis de rutas: el primer paso</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Antes de optimizar, necesitas entender tu situación actual. El análisis de rutas existentes te permitirá 
+            identificar áreas de mejora y oportunidades de optimización:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Tiempo de recorrido real vs. estimado:</strong> Compara los tiempos planificados con los reales</li>
+            <li><strong>Consumo de combustible por ruta:</strong> Identifica las rutas más eficientes energéticamente</li>
+            <li><strong>Tasa de entregas a tiempo:</strong> Mide el rendimiento de cada ruta</li>
+            <li><strong>Costes operativos por kilómetro:</strong> Analiza la rentabilidad de cada trayecto</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Herramientas tecnológicas para la optimización</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La tecnología ha revolucionado la planificación de rutas. Estas son las herramientas esenciales que todo 
+            transportista debería considerar:
+          </p>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Sistemas de GPS y seguimiento en tiempo real</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Los sistemas GPS modernos no solo muestran la ubicación, sino que proporcionan datos valiosos sobre:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Tráfico en tiempo real y rutas alternativas</li>
+            <li>Condiciones meteorológicas que pueden afectar el viaje</li>
+            <li>Restricciones de tráfico y zonas de bajas emisiones</li>
+            <li>Horarios de entrega y ventanas de tiempo óptimas</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Software de optimización de rutas</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Las plataformas especializadas utilizan algoritmos avanzados para calcular las rutas más eficientes, 
+            considerando múltiples variables:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Múltiples paradas y secuencia óptima</li>
+            <li>Capacidad del vehículo y restricciones de carga</li>
+            <li>Horarios de atención de clientes</li>
+            <li>Tipos de carretera y limitaciones de velocidad</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Estrategias de optimización específicas para España</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La geografía y la infraestructura españolas presentan características únicas que deben considerarse:
+          </p>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Aprovechamiento de la red de autovías</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            España cuenta con una de las mejores redes de autovías de Europa. Optimizar su uso puede reducir 
+            significativamente los tiempos de viaje:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Planificar rutas que maximicen el uso de autovías</li>
+            <li>Evitar carreteras nacionales en horas punta</li>
+            <li>Considerar peajes vs. tiempo de viaje en el análisis coste-beneficio</li>
+            <li>Utilizar radas alternativas durante operaciones especiales</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Gestión de corredores logísticos</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Los principales corredores logísticos españoles (Mediterráneo, Eje Atlántico, Corredor Central) 
+            ofrecen oportunidades para optimizar transportes de larga distancia:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Concentrar cargas en los corredores principales</li>
+            <li>Establecer puntos de transferencia estratégicos</li>
+            <li>Coordinar con otros transportistas para compartir cargas</li>
+            <li>Aprovechar las conexiones ferroviarias para largas distancias</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Optimización de la última milla</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La última milla representa hasta el 30% del coste total del transporte. Optimizar esta fase es crucial:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Micro-hubs urbanos:</strong> Utilizar puntos estratégicos en ciudades</li>
+            <li><strong>Entrega fuera de horas punta:</strong> Programar entregas en franjas horarias menos congestionadas</li>
+            <li><strong>Vehículos adecuados:</strong> Utilizar vehículos más pequeños para zonas urbanas</li>
+            <li><strong>Consolidación de envíos:</strong> Agrupar múltiples entregas en la misma zona geográfica</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Métricas clave para medir el éxito</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Para evaluar la efectividad de tus estrategias de optimización, monitoriza estas métricas:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Kilómetros vacíos reducidos:</strong> Porcentaje de reducción de viajes sin carga</li>
+            <li><strong>Tiempo de entrega:</strong> Reducción en el tiempo total de entrega</li>
+            <li><strong>Consumo de combustible:</strong> Ahorro en litros por cada 100 km</li>
+            <li><strong>Satisfacción del cliente:</strong> Mejora en las valoraciones de servicio</li>
+            <li><strong>Utilización del vehículo:</strong> Aumento en el porcentaje de tiempo productivo</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Conclusión</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La optimización de rutas en España requiere un enfoque integral que combine tecnología, conocimiento del 
+            territorio y análisis continuo. Las empresas que invierten en estas estrategias no solo reducen costes, 
+            sino que mejoran su competitividad y sostenibilidad.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            En Nombre, proporcionamos las herramientas y el soporte necesario para que los transportistas optimicen 
+            sus operaciones y maximicen su rentabilidad en el mercado español.
+          </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-500">
+              Publicado el 15 de Julio de 2026
+            </div>
+            <div class="flex gap-4">
+              <a href="../blog.html" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                ← Volver al blog
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>

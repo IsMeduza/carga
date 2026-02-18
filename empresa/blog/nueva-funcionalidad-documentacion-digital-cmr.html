@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva funcionalidad: documentación digital CMR - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up"
+    style="padding: 48px;">
+    <div class="flex items-center gap-2">
+      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../../index.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1" style="padding: 48px;">
+    <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
+      <div class="h-64 bg-gradient-to-br from-[#C5DFF7] via-[#9AC1EB] to-[#EFE6D8] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" class="opacity-60">
+          <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"></path>
+          <path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"></path>
+          <circle cx="7" cy="18" r="2"></circle>
+          <path d="M15 18H9"></path>
+          <circle cx="17" cy="18" r="2"></circle>
+        </svg>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
+          5 Jul 2026
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+          Nueva funcionalidad: documentación digital CMR
+        </h1>
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-slate-700 leading-relaxed mb-6">
+            Estamos orgullosos de anunciar el lanzamiento de nuestra nueva funcionalidad de documentación digital CMR. 
+            Ahora puedes generar, firmar y enviar cartas de porte digitalmente directamente desde la plataforma, 
+            simplificando tus operaciones y reduciendo la burocracia.
+          </p>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">¿Qué es el CMR digital?</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            El CMR (Convention relative au Contrat de Transport International de Marchandises par Route) es el documento 
+            internacional que regula el transporte de mercancías por carretera. Nuestra solución digital mantiene toda 
+            la validez legal del documento tradicional mientras ofrece las ventajas de la digitalización:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Validez legal:</strong> Cumple con la normativa europea de documentos electrónicos</li>
+            <li><strong>Firma digital:</strong> Firmas válidas legalmente con certificado digital</li>
+            <li><strong>Trazabilidad completa:</strong> Registro de todas las modificaciones y accesos</li>
+            <li><strong>Almacenamiento seguro:</strong> Conservación digital durante el periodo legal requerido</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Beneficios principales</h2>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para las empresas</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Ahorro de tiempo:</strong> Generación automática desde los datos del envío</li>
+            <li><strong>Reducción de errores:</strong> Menor riesgo de errores manuales en la documentación</li>
+            <li><strong>Acceso inmediato:</strong> Consulta de documentos en cualquier momento y lugar</li>
+            <li><strong>Integración total:</strong> Conexión directa con tus operaciones logísticas</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para los transportistas</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Firma móvil:</strong> Firma directamente desde tu smartphone o tablet</li>
+            <li><strong>Validación instantánea:</strong> Confirmación inmediata de la recepción</li>
+            <li><strong>Sin papeles:</strong> Elimina la necesidad de documentos físicos</li>
+            <li><strong>Compartición fácil:</strong> Envía copias a todas las partes involucradas</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">¿Cómo funciona?</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            El proceso es simple e intuitivo, diseñado para integrarse perfectamente en tu flujo de trabajo actual:
+          </p>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">1. Generación automática</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Al crear un nuevo transporte, el sistema genera automáticamente el CMR con toda la información necesaria:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Datos del remitente y destinatario</li>
+            <li>Información de la mercancía</li>
+            <li>Condiciones del transporte</li>
+            <li>Términos y condiciones legales</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">2. Firma digital</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Las partes pueden firmar el documento digitalmente mediante:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Firma biométrica en dispositivos móviles</li>
+            <li>Certificado digital reconocido</li>
+            <li>Código de verificación por SMS</li>
+            <li>Firma electrónica avanzada</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">3. Almacenamiento y acceso</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Una vez firmado, el documento se almacena de forma segura y está accesible para todas las partes autorizadas:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Almacenamiento en la nube con encriptación</li>
+            <li>Acceso 24/7 desde cualquier dispositivo</li>
+            <li>Búsqueda avanzada por filtros múltiples</li>
+            <li>Exportación en formato PDF si es necesario</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Características avanzadas</h2>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Plantillas personalizables:</strong> Adapta el CMR a tus necesidades específicas</li>
+            <li><strong>Traducción automática:</strong> Versiones en múltiples idiomas</li>
+            <li><strong>Notificaciones automáticas:</strong> Alertas cuando se firma o modifica un documento</li>
+            <li><strong>Auditoría completa:</strong> Registro de todas las acciones realizadas</li>
+            <li><strong>Integración ERP:</strong> Conexión con tus sistemas de gestión existentes</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Seguridad y cumplimiento normativo</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La seguridad es nuestra prioridad. Nuestro sistema CMR digital cumple con:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>RGPD:</strong> Cumplimiento total de la normativa de protección de datos</li>
+            <li><strong>eIDAS:</strong> Reglamento europeo de identificación electrónica</li>
+            <li><strong>ISO 27001:</strong> Estándares internacionales de seguridad de la información</li>
+            <li><strong>Certificación de firma digital:</strong> Validez legal en toda la UE</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Impacto en la eficiencia operativa</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Los primeros usuarios de nuestra funcionalidad CMR digital han reportado mejoras significativas:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>70% de reducción</strong> en tiempo de procesamiento documental</li>
+            <li><strong>85% menos errores</strong> en la documentación</li>
+            <li><strong>90% de ahorro</strong> en costes de impresión y almacenamiento</li>
+            <li><strong>100% de trazabilidad</strong> en todos los documentos</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Próximas mejoras</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Estamos trabajando continuamente para mejorar nuestra plataforma. Próximamente añadiremos:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Integración con aduanas para transporte internacional</li>
+            <li>Blockchain para mayor seguridad y trazabilidad</li>
+            <li>IA para la validación automática de documentos</li>
+            <li>Conector con sistemas de gestión de almacenes (WMS)</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Conclusión</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La digitalización del CMR es más que una mejora tecnológica; es una transformación fundamental en cómo 
+            gestionamos la documentación del transporte. Con Nombre, estás preparado para el futuro de la logística 
+            digital, más eficiente, segura y sostenible.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            ¿Listo para empezar a usar el CMR digital? Contacta con nuestro equipo de soporte para activar esta 
+            funcionalidad en tu cuenta.
+          </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-500">
+              Publicado el 5 de Julio de 2026
+            </div>
+            <div class="flex gap-4">
+              <a href="../blog.html" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                ← Volver al blog
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>
