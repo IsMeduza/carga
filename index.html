@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombre - Plataforma de Transporte</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Outfit', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style>
+    /* Animaciones y estilos personalizados */
+    .gradient-text {
+      background: linear-gradient(135deg, #1A1A1A 0%, #4a6cf7 50%, #1A1A1A 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 4s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% center;
+      }
+      50% {
+        background-position: 100% center;
+      }
+    }
+
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: none;
+    }
+
+    .btn-shine:hover::before {
+      left: 100%;
+      transition: left 0.5s ease-in-out;
+    }
+
+    .magnetic-btn {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .magnetic-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  </style>
+</head>
+
+<body class="antialiased min-h-screen overflow-x-hidden selection:bg-black selection:text-white text-slate-800 bg-[#ABCDE9] relative">
+
+  <!-- Background Layer -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      class="absolute top-[20%] -left-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none"
+      alt="cloud">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+      class="absolute top-[30%] -right-[10%] w-[50%] opacity-40 mix-blend-screen blur-xl pointer-events-none"
+      alt="cloud">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 px-2 py-1.5 rounded-full border border-white bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-500">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2.5 pl-3 pr-5 py-2 rounded-full hover:bg-white/60 transition-all group">
+      <img src="logo.svg" alt="Nombre" class="w-7 h-7 transition-transform duration-300">
+      <span class="text-[17px] font-extrabold text-slate-900 tracking-tight">
+        Nombre
+      </span>
+    </a>
+
+    <!-- Nav Links -->
+    <div class="flex items-center gap-1">
+      <a href="#producto" class="nav-link relative px-4 py-2 rounded-full text-[13px] font-semibold text-slate-500 transition-colors duration-300 z-[1]">
+        Producto
+        <span class="nav-dot"></span>
+      </a>
+      <a href="#como-funciona" class="nav-link relative px-4 py-2 rounded-full text-[13px] font-semibold text-slate-500 transition-colors duration-300 z-[1]">
+        Soluciones
+        <span class="nav-dot"></span>
+      </a>
+      <a href="#precios" class="nav-link relative px-4 py-2 rounded-full text-[13px] font-semibold text-slate-500 transition-colors duration-300 z-[1]">
+        Precios
+        <span class="nav-dot"></span>
+      </a>
+    </div>
+
+    <!-- CTA + Mobile burger -->
+    <div class="flex items-center gap-2 pl-1">
+      <a href="login.html"
+        class="hidden md:inline-flex items-center px-4 py-2 rounded-full text-[13px] font-semibold text-slate-700 border border-slate-200 bg-white hover:bg-slate-50 transition-all">
+        Acceder
+      </a>
+      <a href="register.html"
+        class="nav-cta magnetic-btn hidden md:inline-flex bg-[#1A1A1A] text-white text-[13px] font-bold px-5 py-2 rounded-full items-center gap-2 shadow-lg">
+        <span>Prueba gratis</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8 p-8">
+      <a href="#producto" class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Producto</a>
+      <a href="#como-funciona" class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Soluciones</a>
+      <a href="#precios" class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Precios</a>
+      <div class="flex gap-4 mt-8">
+        <a href="login.html" class="btn-shine magnetic-btn bg-[#1A1A1A] text-white text-[16px] font-semibold px-8 py-3 rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl">
+          Acceder
+        </a>
+        <a href="register.html" class="btn-shine magnetic-btn bg-white border border-slate-300 text-slate-700 text-[16px] font-medium px-8 py-3 rounded-full hover:bg-slate-50 transition-all">
+          Prueba gratis
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 z-10">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mb-8">
+        <span class="inline-block text-xs font-bold tracking-widest text-slate-600 uppercase mb-4 px-4 py-2 rounded-full border border-slate-300 bg-white/50">
+          14 días de prueba gratuita
+        </span>
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1A1A1A] mb-6 leading-[1.1] tracking-tight">
+        El marketplace de transporte por carretera en España
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Sin comisiones, sin intermediarios, con toda la documentación incluida.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12">
+        <a href="register.html" class="btn-shine magnetic-btn bg-[#1A1A1A] text-white text-[18px] font-semibold px-8 py-4 rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
+          Empezar prueba gratuita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="#como-funciona" class="magnetic-btn bg-white border border-slate-300 text-slate-700 text-[18px] font-medium px-8 py-4 rounded-full hover:bg-slate-50 transition-all flex items-center gap-2">
+          Ver una demo en vivo
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-2">2.150+</div>
+          <div class="text-sm text-slate-600">Transportistas</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-2">1.284</div>
+          <div class="text-sm text-slate-600">Cargas/día</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-2">4.8/5</div>
+          <div class="text-sm text-slate-600">Valoración</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-2">98%</div>
+          <div class="text-sm text-slate-600">Satisfacción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="producto" class="py-20 px-6 z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
+          Todo lo que necesitas para mover mercancía
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Desde la búsqueda de cargas hasta la documentación, todo en una sola plataforma
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all">
+          <div class="w-12 h-12 bg-[#F2EBE5] rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#1A1A1A] mb-3">Transportistas verificados</h3>
+          <p class="text-slate-600">Todos nuestros transportistas pasan por un riguroso proceso de verificación de licencias y seguros.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all">
+          <div class="w-12 h-12 bg-[#F2EBE5] rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#1A1A1A] mb-3">Sin comisiones</h3>
+          <p class="text-slate-600">Cuota fija mensual. Sin costes ocultos ni comisiones por carga. Paga solo lo que usas.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all">
+          <div class="w-12 h-12 bg-[#F2EBE5] rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#1A1A1A] mb-3">Documentación digital</h3>
+          <p class="text-slate-600">CMR, albaranes y cartas de porte generados automáticamente. Cero papel, cero problemas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 z-10">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-100 p-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
+        ¿Listo para optimizar tu logística?
+      </h2>
+      <p class="text-xl text-slate-600 mb-8">
+        Únete a las más de 2.150 empresas que ya confían en Nombre
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <a href="register.html" class="btn-shine magnetic-btn bg-[#1A1A1A] text-white text-[18px] font-semibold px-8 py-4 rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl">
+          Empezar prueba gratuita
+        </a>
+        <a href="login.html" class="magnetic-btn bg-white border border-slate-300 text-slate-700 text-[18px] font-medium px-8 py-4 rounded-full hover:bg-slate-50 transition-all">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#F2EBE5] border-t border-slate-200 py-12 px-6 z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="logo.svg" alt="Nombre" class="w-8 h-8">
+            <span class="text-2xl font-black text-slate-900 tracking-tight">Nombre</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            El marketplace de transporte por carretera en España. Sin comisiones, sin intermediarios.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="font-bold text-slate-900 mb-4">Producto</h3>
+          <ul class="space-y-2">
+            <li><a href="#producto" class="text-slate-600 hover:text-slate-900">Características</a></li>
+            <li><a href="#precios" class="text-slate-600 hover:text-slate-900">Precios</a></li>
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Integraciones</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-bold text-slate-900 mb-4">Empresa</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Sobre nosotros</a></li>
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Contacto</a></li>
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-bold text-slate-900 mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Términos de servicio</a></li>
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Política de privacidad</a></li>
+            <li><a href="#" class="text-slate-600 hover:text-slate-900">Política de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-slate-300 mt-8 pt-8 text-center">
+        <p class="text-slate-600">
+          © 2024 Nombre. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking on links
+    document.querySelectorAll('.mobile-nav-item').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Magnetic button effect
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+      });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
