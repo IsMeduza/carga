@@ -9,26 +9,16 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check existing session
-    const checkSession = async () => {
-      try {
-        const { data: { session: currentSession } } = await supabase.auth.getSession();
-        if (currentSession?.user) {
-          setUser(currentSession.user);
-          setSession(currentSession);
-        }
-      } catch (error) {
-        console.error('Error checking session:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (!supabase) {
+      setLoading(false);
+      return;
+    }
 
-    checkSession();
-
-    // Listen for auth changes
+    // 1. First, set up the auth state listener.
+    //    This will fire for the initial session AND for OAuth callback tokens in the URL hash.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, newSession) => {
+      (event, newSession) => {
+        console.log('Auth event:', event);
         if (newSession?.user) {
           setUser(newSession.user);
           setSession(newSession);
@@ -40,12 +30,27 @@ export function AuthProvider({ children }) {
       }
     );
 
+    // 2. Then check existing session as a fallback.
+    //    onAuthStateChange should fire INITIAL_SESSION first, but just in case:
+    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
+      if (currentSession?.user) {
+        setUser(currentSession.user);
+        setSession(currentSession);
+      }
+      // If onAuthStateChange hasn't fired yet, stop loading
+      setLoading(false);
+    }).catch((error) => {
+      console.error('Error checking session:', error);
+      setLoading(false);
+    });
+
     return () => {
       subscription?.unsubscribe();
     };
   }, []);
 
   const signUp = useCallback(async (email, password, metadata = {}) => {
+    if (!supabase) throw new Error('Supabase not configured');
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -58,6 +63,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const signIn = useCallback(async (email, password) => {
+    if (!supabase) throw new Error('Supabase not configured');
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -67,13 +73,18 @@ export function AuthProvider({ children }) {
   }, []);
 
   const signOut = useCallback(async () => {
+    if (!supabase) throw new Error('Supabase not configured');
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
   }, []);
 
   const signInWithGoogle = useCallback(async () => {
+    if (!supabase) throw new Error('Supabase not configured');
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`,
+      },
     });
     if (error) throw error;
     return data;

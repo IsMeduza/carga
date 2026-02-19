@@ -8,6 +8,10 @@ import { BRAND_NAME } from '@/constants';
 
 // Lazy loading
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
+const HomePage = lazy(() => import('@/pages/HomePage'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+const EmpresaPage = lazy(() => import('@/pages/EmpresaPage'));
+const LegalPage = lazy(() => import('@/pages/LegalPage'));
 
 // Redirect to static pages
 const RedirectTo = ({ path }) => {
@@ -41,7 +45,11 @@ function App() {
                     <DashboardPage />
                   </ProtectedRoute>
                 } />
+                <Route path="/empresa/:page" element={<EmpresaPage />} />
+                <Route path="/legal/:page" element={<LegalPage />} />
                 <Route path="/" element={<RedirectTo path="/home.html" />} />
+                <Route path="/app" element={<HomePage />} />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Suspense>
           </BrowserRouter>

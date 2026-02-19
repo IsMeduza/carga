@@ -1,104 +1,108 @@
-# Nombre - Plataforma de Transporte
+# 🚛 Plataforma de Transporte "Nombre" - Marketplace Logístico
 
-Marketplace de transporte por carretera en España. Conecta generadores de carga con transportistas verificados.
+¡Bienvenido a la plataforma líder para el transporte de mercancías por carretera en España! Este marketplace conecta de forma eficiente a generadores de carga con una red de transportistas verificados, optimizando la logística y reduciendo los tiempos de inactividad.
 
-## Arquitectura
+---
 
-```
+## 🏗️ Arquitectura del Sistema
+
+El proyecto está diseñado siguiendo una arquitectura de microservicios simplificada, separando claramente las responsabilidades del cliente y el servidor:
+
+```text
 /app/
-├── backend/                # FastAPI Backend
-│   ├── server.py           # App principal + endpoints API
-│   ├── auth.py             # Middleware Supabase JWT
-│   ├── requirements.txt    # Dependencias Python
-│   └── .env                # Variables de entorno
-├── frontend/               # React Frontend (CRA + CRACO)
+├── backend/                # 🚀 API Core (FastAPI)
+│   ├── server.py           # Endpoints principales y lógica de negocio
+│   ├── auth.py             # Middleware de autenticación con Supabase JWT
+│   ├── requirements.txt    # Dependencias de Python
+│   └── .env                # Variables de entorno (Configuración)
+├── frontend/               # ⚛️ Interfaz de Usuario (React + Tailwind)
 │   ├── src/
-│   │   ├── App.js          # Router principal
-│   │   ├── constants.js    # Constantes globales
-│   │   ├── lib/
-│   │   │   ├── supabase.js # Cliente Supabase
-│   │   │   └── utils.js    # Utilidades
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx # Contexto de autenticacion
-│   │   ├── hooks/
-│   │   │   ├── useDebounce.js  # Hook debounce
-│   │   │   └── use-toast.js    # Hook toast
-│   │   ├── components/
-│   │   │   ├── ProtectedRoute.jsx # Rutas protegidas
-│   │   │   ├── ErrorBoundary.js   # Error boundary
-│   │   │   └── ui/               # Componentes shadcn/ui
-│   │   └── pages/
-│   │       ├── LoginPage.jsx      # Login con Supabase
-│   │       ├── RegisterPage.jsx   # Registro con Supabase (3 pasos)
-│   │       ├── DashboardPage.js   # Dashboard principal
-│   │       └── Dashboard.css      # Estilos dashboard
-│   ├── package.json
-│   ├── craco.config.js
-│   └── tailwind.config.js
-└── README.md
+│   │   ├── App.js          # Enrutador y estructura base
+│   │   ├── context/        # Gestión de estado global (AuthContext)
+│   │   ├── components/     # Componentes reutilizables y UI (Shadcn)
+│   │   └── pages/          # Vistas principales (Dashboard, Login, etc.)
+│   ├── package.json        # Configuración de npm/yarn
+│   ├── craco.config.js     # Personalización de CRA
+│   └── tailwind.config.js  # Estilos atómicos
+├── memory/                 # 🧠 Documentación de producto (PRD)
+└── README.md               # 📖 Esta guía
 ```
 
-## Stack Tecnologico
+---
 
-- **Frontend**: React 19, Tailwind CSS, shadcn/ui, Mapbox GL JS
-- **Backend**: FastAPI, Motor (MongoDB async), httpx
-- **Auth**: Supabase (email/password)
-- **Base de datos**: MongoDB (datos de la app), Supabase (auth)
+## 🛠️ Stack Tecnológico
 
-## Autenticacion
+### Frontend: Experiencia de Usuario Premium
+- **React 19**: Biblioteca base para una UI reactiva.
+- **Tailwind CSS**: Estilizado moderno y eficiente.
+- **shadcn/ui**: Componentes de alta calidad y accesibles.
+- **Mapbox GL JS**: Visualización interactiva de rutas y cargas.
+- **Framer Motion**: Animaciones fluidas para una sensación "premium".
 
-Se usa Supabase para autenticacion real:
-- **Login**: Email + Password via `supabase.auth.signInWithPassword()`
-- **Register**: Formulario de 3 pasos, crea cuenta via `supabase.auth.signUp()`
-- **Rutas protegidas**: El dashboard requiere sesion activa
-- **Backend**: Verifica tokens JWT llamando a la API de Supabase
+### Backend: Potencia y Fiabilidad
+- **FastAPI**: Framwork asíncrono de alto rendimiento para Python.
+- **MongoDB**: Base de datos NoSQL para flexibilidad en los datos de carga.
+- **Supabase Auth**: Autenticación segura y escalable (JWT).
+- **Motor**: Driver asíncrono para MongoDB.
 
-## API Endpoints
+---
 
-### Publicos
-- `GET /api/` - Status
-- `GET /api/stats` - Estadisticas generales
-- `GET /api/cargas` - Lista de cargas disponibles
-- `GET /api/envios` - Lista de envios
-- `GET /api/transportistas` - Lista de transportistas
-- `POST /api/chat` - Chat asistente
+## 🚀 Guía de Instalación y Uso
 
-### Protegidos (requieren JWT)
-- `GET /api/auth/me` - Perfil del usuario
-- `POST /api/auth/profile` - Crear/actualizar perfil
-- `POST /api/cargas/accept/{id}` - Aceptar carga
+### 1. Requisitos Previos
+- **Python 3.10+**
+- **Node.js 18+** y **npm** (o yarn).
+- **MongoDB**: Una instancia corriendo localmente en el puerto `27017` o una URL remota.
+- **Cuenta de Supabase**: Con un proyecto configurado.
 
-## Variables de Entorno
-
-### Backend (.env)
-- `MONGO_URL` - URL de MongoDB
-- `DB_NAME` - Nombre de la base de datos
-- `SUPABASE_URL` - URL del proyecto Supabase
-- `SUPABASE_SERVICE_ROLE_KEY` - Service role key de Supabase
-
-### Frontend (.env)
-- `REACT_APP_BACKEND_URL` - URL del backend
-- `REACT_APP_SUPABASE_URL` - URL del proyecto Supabase
-- `REACT_APP_SUPABASE_ANON_KEY` - Anon key de Supabase
-
-## Instalacion
-
+### 2. Configuración del Backend
 ```bash
-# Backend
 cd backend
 pip install -r requirements.txt
-
-# Frontend
-cd frontend
-yarn install
+# Asegúrate de configurar el archivo .env con:
+# MONGO_URL, DB_NAME, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
 ```
 
-## Desarrollo
+Para iniciar el servidor:
+```bash
+python -m uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+```
+
+### 3. Configuración del Frontend
+Si ya existe un archivo `yarn.lock`, se recomienda usar **yarn**. Si no tienes yarn instalado globalmente, puedes usar `npx`.
 
 ```bash
-# Backend (puerto 8001)
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+cd frontend
+# Instalación de dependencias
+npx yarn install
 
-# Frontend (puerto 3000)
-yarn start
+# Iniciar servidor de desarrollo (Puerto 3000)
+npx yarn start
 ```
+
+---
+
+## 🔐 Autenticación y Seguridad
+
+La plataforma utiliza **Supabase** para gestionar la identidad de los usuarios:
+- **Login/Registro**: Implementado a nivel de cliente con `AuthContext`.
+- **Protección de Rutas**: Los componentes `ProtectedRoute` aseguran que solo usuarios autenticados accedan al Dashboard.
+- **Verificación Backend**: Cada petición protegida incluye un token JWT que es validado por el backend llamando a Supabase, garantizando que los datos solo sean accesibles por sus dueños.
+
+---
+
+## 📡 Endpoints de la API
+
+| Método | Endpoint | Descripción | Acceso |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/` | Estado de la API | Público |
+| `GET` | `/api/stats` | Estadísticas generales del mercado | Público |
+| `GET` | `/api/cargas` | Listado de cargas disponibles con filtros | Público |
+| `POST` | `/api/chat` | Asistente inteligente para transporte | Público |
+| `GET` | `/api/auth/me` | Perfil del usuario actual | Protegido |
+| `POST` | `/api/cargas/accept/{id}`| Aceptar una carga y crear envío | Protegido |
+
+---
+
+## 📝 Notas de Desarrollo
+> **IMPORTANTE**: La documentación anterior mencionaba errores en los comandos iniciales. Se ha corregido para incluir el uso de `npx` y la necesidad de tener **MongoDB** activo para que el sembrado de datos (seeding) no falle al arrancar el backend.

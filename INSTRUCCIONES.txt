@@ -1,0 +1,21 @@
+# INSTRUCCIONES DE INICIO RÁPIDO - PLATAFORMA CARGA
+
+1. REQUISITOS:
+   - Python 3.10+
+   - Node.js 18+
+   - MongoDB (Local o URL remota)
+
+2. BACKEND:
+   - Ir a la carpeta: cd backend
+   - Instalar: pip install -r requirements.txt
+   - Iniciar: python -m uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+
+3. FRONTEND:
+   - Ir a la carpeta: cd frontend
+   - Instalar: npx yarn install
+   - Iniciar: npx yarn start
+
+4. NOTAS IMPORTANTES:
+   - El sistema usa Supabase para la autenticación.
+   - El backend requiere que el servicio de MongoDB esté activo para funcionar correctamente.
+   - Si tienes problemas con 'yarn', recuerda usar 'npx yarn'.

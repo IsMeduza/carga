@@ -12,6 +12,24 @@
         <title>Nombre - Plataforma de Transporte</title>
     </head>
     <body>
+        <script>
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+            window.addEventListener('beforeunload', function() {
+                window.scrollTo(0, 0);
+            });
+        </script>
+        <style>
+            ::-webkit-scrollbar {
+                width: 0px;
+                background: transparent;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        </style>
         <noscript>Necesitas habilitar JavaScript para usar esta aplicacion.</noscript>
         <div id="root"></div>
     </body>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguridad en el transporte: cómo verificamos a cada transportista - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up">
+    <div class="flex items-center gap-2">
+      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../../home.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1">
+    <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
+      <div class="h-64 bg-gradient-to-br from-[#9AC1EB] via-[#EFE6D8] to-[#F2EBE5] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" class="opacity-60">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
+          20 Jun 2026
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+          Seguridad en el transporte: cómo verificamos a cada transportista
+        </h1>
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-slate-700 leading-relaxed mb-6">
+            En Nombre, la seguridad no es una opción, es nuestra prioridad absoluta. Cada transportista que
+            forma parte de nuestra plataforma pasa por un riguroso proceso de verificación que garantiza
+            la máxima confianza para nuestras empresas clientes. Te explicamos paso a paso cómo lo hacemos.
+          </p>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Nuestra filosofía de seguridad</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La seguridad en el transporte de mercancías abarca múltiples dimensiones: legal, operativa,
+            financiera y reputacional. Nuestro proceso de verificación está diseñado para abordar todas
+            estas áreas de manera exhaustiva:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Verificación legal:</strong> Cumplimiento de toda la normativa vigente</li>
+            <li><strong>Capacidad operativa:</strong> Recursos adecuados para el transporte</li>
+            <li><strong>Solvencia financiera:</strong> Estabilidad económica y cobertura de seguros</li>
+            <li><strong>Reputación profesional:</strong> Historial y referencias verificadas</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">El proceso de verificación paso a paso</h2>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 1: Solicitud inicial y pre-filtro</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Todo comienza cuando un transportista se registra en nuestra plataforma. Realizamos un primer
+            filtro automático que verifica:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Identificación fiscal y datos básicos de la empresa</li>
+            <li>Verificación inicial en registros públicos</li>
+            <li>Cumplimiento de requisitos mínimos obligatorios</li>
+            <li>Detección de posibles incompatibilidades o sanciones</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 2: Documentación completa</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Si el transportista supera el pre-filtro, solicitamos la documentación completa que verificamos
+            manualmente:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Documentación legal:</strong>
+              <ul class="list-circle list-inside ml-6 mt-2">
+                <li>CIF y escrituras de la empresa</li>
+                <li>Licencia de transportista de mercancías</li>
+                <li>Autorizaciones especiales (si aplica)</li>
+                <li>Certificado de conductor profesional</li>
+              </ul>
+            </li>
+            <li><strong>Documentación operativa:</strong>
+              <ul class="list-circle list-inside ml-6 mt-2">
+                <li>Tarjeta de transporte (CAP)</li>
+                <li>Permisos de circulación de vehículos</li>
+                <li>Inspecciones técnicas de vehículos en vigor</li>
+                <li>Certificados de formación de conductores</li>
+              </ul>
+            </li>
+            <li><strong>Documentación financiera:</strong>
+              <ul class="list-circle list-inside ml-6 mt-2">
+                <li>Pólizas de seguro de responsabilidad civil</li>
+                <li>Seguro de mercancías transportadas</li>
+                <li>Certificados de solvencia económica</li>
+                <li>Referencias bancarias y comerciales</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 3: Verificación digital y cruzada</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Utilizamos tecnología avanzada para verificar la autenticidad de los documentos:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Validación de documentos:</strong> Verificación de sellos, firmas y hologramas</li>
+            <li><strong>Cruce de bases de datos:</strong> Consulta en registros oficiales (DGT, Hacienda, Seguridad
+              Social)</li>
+            <li><strong>Detección de anomalías:</strong> Identificación de documentos falsificados o alterados</li>
+            <li><strong>Verificación de vigencia:</strong> Confirmación de que todos los documentos están en vigor</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 4: Entrevista personal y evaluación</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestro equipo de verificación realiza una entrevista exhaustiva para evaluar aspectos cualitativos:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Experiencia profesional y especialización</li>
+            <li>Capacidad operativa real vs. documentada</li>
+            <li>Conocimiento de normativa y buenas prácticas</li>
+            <li>Disponibilidad y compromiso con la calidad</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 5: Verificación in situ (selectiva)</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Para transportistas de alto volumen o especializados, realizamos verificaciones presenciales:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Inspección de instalaciones y flota vehicular</li>
+            <li>Verificación de procesos operativos</li>
+            <li>Evaluación de medidas de seguridad</li>
+            <li>Entrevista con equipo operativo</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Paso 6: Periodo de prueba y monitorización</h3>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Una vez aprobado, el transportista entra en un periodo de prueba de 3 meses:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Asignación de transportes de baja complejidad inicialmente</li>
+            <li>Monitorización continua de rendimiento</li>
+            <li>Evaluación de cumplimiento de plazos y calidad</li>
+            <li>Recopilación de feedback de empresas clientes</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Criterios de evaluación continua</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La verificación no termina con la aprobación inicial. Mantenemos una evaluación constante:
+          </p>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Métricas de rendimiento</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Puntualidad:</strong> Porcentaje de entregas a tiempo (mínimo 95%)</li>
+            <li><strong>Calidad del servicio:</strong> Valoración de clientes (mínimo 4.5/5)</li>
+            <li><strong>Incidentes:</strong> Número de incidencias por cada 100 transportes</li>
+            <li><strong>Comunicación:</strong> Tiempo de respuesta y proactividad</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Verificaciones periódicas</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Revisión anual de documentación obligatoria</li>
+            <li>Actualización de seguros y permisos</li>
+            <li>Verificación de estado de vehículos</li>
+            <li>Renovación de certificados de formación</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Tecnología al servicio de la seguridad</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Utilizamos herramientas tecnológicas avanzadas para garantizar la máxima seguridad:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>IA para detección de anomalías:</strong> Algoritmos que identifican patrones sospechosos</li>
+            <li><strong>Blockchain para trazabilidad:</strong> Registro inmutable de verificaciones</li>
+            <li><strong>Integración con autoridades:</strong> Conexión directa con bases de datos oficiales</li>
+            <li><strong>Monitorización en tiempo real:</strong> Alertas automáticas de posibles incidencias</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Transparencia total en el proceso</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Creemos en la transparencia como base de la confianza. Por eso:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Comunicamos claramente los requisitos y criterios de evaluación</li>
+            <li>Proporcionamos feedback constructivo en caso de no aprobación</li>
+            <li>Mantenemos actualizado el estado de verificación de cada transportista</li>
+            <li>Ofrecemos canales directos para resolver dudas y incidencias</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Resultados de nuestro proceso</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Nuestro riguroso proceso de verificación ha demostrado su efectividad:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Tasa de aprobación:</strong> Solo el 35% de los solicitantes superan el proceso completo</li>
+            <li><strong>Índice de incidentes:</strong> 85% menor que la media del sector</li>
+            <li><strong>Satisfacción cliente:</strong> 4.8/5 en seguridad y confianza</li>
+            <li><strong>Retención:</strong> 92% de transportistas verificados permanecen activos</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Mejoras continuas</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Estamos constantemente mejorando nuestro proceso de verificación:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Incorporación de nuevas tecnologías de verificación</li>
+            <li>Actualización de criterios según normativa vigente</li>
+            <li>Colaboración con autoridades y asociaciones del sector</li>
+            <li>Formación continua de nuestro equipo de verificación</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Conclusión</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La seguridad en el transporte no es negociable. Nuestro exhaustivo proceso de verificación
+            garantiza que cada transportista en Nombre cumpla con los más altos estándares de calidad,
+            seguridad y profesionalidad. Esto nos permite ofrecer a nuestras empresas clientes la tranquilidad
+            de saber que sus mercancías están en las mejores manos.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Porque en Nombre, no solo conectamos empresas con transportistas, construimos puentes de confianza
+            que hacen del transporte una experiencia segura y fiable para todos.
+          </p>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-500">
+              Publicado el 20 de Junio de 2026
+            </div>
+            <div class="flex gap-4">
+              <a href="../blog.html" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                ← Volver al blog
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>

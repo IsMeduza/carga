@@ -16,6 +16,9 @@
       history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
   </script>
   <script>
     tailwind.config = {
@@ -32,6 +35,7 @@
       background-color: #000000;
       color: #ffffff;
     }
+
     ::-moz-selection {
       background-color: #000000;
       color: #ffffff;
@@ -121,6 +125,15 @@
       background: transparent;
     }
 
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
     /* ── Testimonial rotation ── */
     @keyframes testimonialIn {
       from {
@@ -199,8 +212,11 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     .animate-spin {
       animation: spin 1s linear infinite;
       display: inline-block;
@@ -209,6 +225,49 @@
     @keyframes btnSweep {
       to {
         left: 150%;
+      }
+    }
+
+    /* ── Mobile responsive auth ── */
+    @media (max-width: 639px) {
+
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      .auth-sky-bg {
+        display: none;
+      }
+
+      .auth-right-panel {
+        background: #ffffff !important;
+        padding: 0 !important;
+        min-height: 100vh;
+        min-height: 100dvh;
+        width: 100% !important;
+      }
+
+      .auth-content-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .auth-card {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 1.25rem !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .auth-mobile-logo {
+        padding-top: 1.5rem;
       }
     }
   </style>
@@ -221,7 +280,8 @@
     <!-- ════════════════════════════════════════════════ -->
     <!-- LEFT PANEL — Dark, visual, animated             -->
     <!-- ════════════════════════════════════════════════ -->
-    <div class="lg:w-[48%] bg-[#0F0F0F] relative overflow-hidden min-h-screen lg:min-h-screen flex items-center">
+    <div
+      class="hidden lg:flex lg:w-[48%] bg-[#0F0F0F] relative overflow-hidden min-h-screen lg:min-h-screen items-center">
 
       <!-- Subtle grid pattern -->
       <div class="absolute inset-0 opacity-[0.03]"
@@ -231,7 +291,7 @@
       <!-- Content -->
       <div
         class="relative z-10 w-full px-8 py-12 lg:px-14 xl:px-20 lg:py-0 flex items-center justify-center min-h-full">
-        <div class="max-w-lg mx-auto space-y-8">
+        <div class="max-w-md mx-auto space-y-6">
 
           <!-- Logo -->
           <a href="/home.html" class="inline-flex items-center gap-2.5 group anim-up">
@@ -250,54 +310,6 @@
               La plataforma que une a generadores de carga y transportistas verificados. Sin comisiones. Sin
               complicaciones.
             </p>
-          </div>
-
-          <!-- Mock dashboard card (visual element) -->
-          <div class="anim-up delay-2">
-            <div class="float-card bg-white/[0.06] border border-white/[0.08] rounded-2xl p-5 space-y-4">
-              <!-- Mock header -->
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  <span class="text-[13px] font-medium text-white/70">Ruta activa</span>
-                </div>
-                <span class="text-[12px] text-white/40 font-mono">hace 3 min</span>
-              </div>
-              <!-- Mock route -->
-              <div class="flex items-center gap-3">
-                <div class="text-center">
-                  <div class="text-[13px] font-bold text-white">MAD</div>
-                  <div class="text-[10px] text-white/40">Madrid</div>
-                </div>
-                <div class="flex-1 flex items-center gap-1">
-                  <div class="h-px flex-1 bg-gradient-to-r from-white/20 to-white/5"></div>
-                  <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  <div class="h-px flex-1 bg-gradient-to-r from-white/5 to-white/20"></div>
-                </div>
-                <div class="text-center">
-                  <div class="text-[13px] font-bold text-white">BCN</div>
-                  <div class="text-[10px] text-white/40">Barcelona</div>
-                </div>
-              </div>
-              <!-- Mock stats row -->
-              <div class="grid grid-cols-3 gap-3">
-                <div class="bg-white/[0.04] rounded-lg px-3 py-2">
-                  <div class="text-[11px] text-white/40">Precio</div>
-                  <div class="text-[15px] font-bold text-white">420€</div>
-                </div>
-                <div class="bg-white/[0.04] rounded-lg px-3 py-2">
-                  <div class="text-[11px] text-white/40">Distancia</div>
-                  <div class="text-[15px] font-bold text-white">621km</div>
-                </div>
-                <div class="bg-white/[0.04] rounded-lg px-3 py-2">
-                  <div class="text-[11px] text-white/40">Ofertas</div>
-                  <div class="text-[15px] font-bold text-emerald-400">7</div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Stats inline -->
@@ -389,10 +401,10 @@
     <!-- RIGHT PANEL — Login Form                        -->
     <!-- ════════════════════════════════════════════════ -->
     <div
-      class="lg:w-[52%] bg-[#ABCDE9] flex flex-col justify-center items-center p-5 sm:p-8 lg:p-12 xl:p-16 form-scroll overflow-y-auto min-h-screen lg:min-h-screen relative">
+      class="auth-right-panel w-full lg:w-[52%] bg-[#ABCDE9] flex flex-col justify-center items-center px-0 py-0 sm:p-8 lg:p-12 xl:p-16 form-scroll overflow-y-auto min-h-screen lg:min-h-screen relative">
 
       <!-- Sky background from index.html -->
-      <div class="fixed inset-0 z-0 pointer-events-none lg:left-[48%]">
+      <div class="auth-sky-bg fixed inset-0 z-0 pointer-events-none lg:left-[48%]">
         <img
           src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
           alt="Sky Background"
@@ -400,10 +412,10 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
       </div>
 
-      <div class="w-full max-w-[440px] relative z-10">
+      <div class="auth-content-wrapper w-full max-w-none sm:max-w-[440px] relative z-10">
 
         <!-- Mobile logo -->
-        <div class="lg:hidden text-center mb-6 anim-up">
+        <div class="auth-mobile-logo lg:hidden text-center mb-6 anim-up">
           <a href="/home.html" class="inline-flex items-center gap-2.5">
             <img src="/assets/img/logo-white.svg" alt="Nombre" class="w-8 h-8 nav-logo-mark">
             <span class="text-xl font-extrabold text-slate-900 tracking-tight">Nombre</span>
@@ -412,10 +424,10 @@
 
         <!-- Card -->
         <div
-          class="bg-white rounded-[24px] border border-slate-200/80 shadow-xl shadow-black/[0.04] p-7 sm:p-9 anim-up delay-1">
+          class="auth-card bg-white rounded-none sm:rounded-[24px] border-0 sm:border border-slate-200/80 shadow-none sm:shadow-xl sm:shadow-black/[0.04] p-4 sm:p-6 anim-up delay-1 min-h-screen sm:min-h-0">
 
-          <!-- Back -->
-          <div class="mb-5">
+          <!-- Back Button (Absolute Positioning) -->
+          <div class="absolute top-5 left-5 sm:top-9 sm:left-9">
             <a href="/home.html"
               class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-900 transition-colors font-medium">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,13 +438,13 @@
           </div>
 
           <!-- Title -->
-          <div class="text-center mb-7">
+          <div class="text-center mb-4">
             <h1 class="text-[22px] font-bold text-[#1A1A1A]">Bienvenido de vuelta</h1>
             <p class="text-sm text-slate-400 mt-1">Inicia sesión en tu cuenta</p>
           </div>
 
           <form id="login-form" novalidate>
-            <div class="space-y-4">
+            <div class="space-y-3">
               <div>
                 <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email</label>
                 <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@empresa.com"
@@ -462,13 +474,13 @@
                   Recuérdame
                 </label>
                 <a href="#"
-                  class="text-sm font-medium text-slate-600 hover:text-slate-900 hover:underline transition-colors">¿Olvidaste
+                  class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">¿Olvidaste
                   tu contraseña?</a>
               </div>
             </div>
 
             <button type="submit"
-              class="btn-shine magnetic-btn w-full mt-6 bg-[#1A1A1A] text-white text-[15px] font-semibold px-6 py-3.5 rounded-xl hover:bg-slate-800 active:scale-[0.98] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+              class="btn-shine magnetic-btn w-full mt-6 bg-[#1A1A1A] text-white text-[15px] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] active:scale-[0.98] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
               Iniciar sesión
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -479,7 +491,7 @@
           </form>
 
           <!-- Divider -->
-          <div class="relative my-6">
+          <div class="relative my-4">
             <div class="absolute inset-0 flex items-center">
               <div class="w-full border-t border-slate-200"></div>
             </div>
@@ -489,7 +501,7 @@
 
           <!-- Social -->
           <div>
-            <button type="button"
+            <button type="button" id="google-btn"
               class="w-full flex items-center justify-center gap-2 px-4 py-3 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all">
               <svg class="w-4 h-4" viewBox="0 0 24 24">
                 <path fill="#4285F4"
@@ -507,19 +519,11 @@
 
           <!-- Register link -->
           <p class="text-center text-sm text-slate-500 mt-6">
-            ¿No tienes cuenta? <a href="/auth/register.html" class="font-semibold text-slate-900 hover:underline">Crea una
+            ¿No tienes cuenta? <a href="/auth/register.html" class="font-semibold text-slate-900 hover:underline">Crea
+              una
               gratis</a>
           </p>
 
-          <!-- Demo access -->
-          <p class="text-center text-sm text-slate-400 mt-4 pt-4 border-t border-slate-100">
-            <button type="button" onclick="goToDemo()" class="inline-flex items-center gap-1 hover:text-slate-600 transition-colors cursor-pointer bg-transparent border-none font-inherit">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-              Acceder en modo demo (sin login)
-            </button>
-          </p>
         </div>
       </div>
     </div>
@@ -530,15 +534,35 @@
   <script>
     const SUPABASE_URL = 'https://fksxhvqbsubullcpupul.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZrc3hodnFic3VidWxsY3B1cHVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NDk3MjMsImV4cCI6MjA4NzAyNTcyM30.gOv_h0puLUwYg9IyFTY6qHrwIJG0emy6kroWGbsqSBA';
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Check if already logged in
+    // Verificación de sesión
     (async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const { data: { session } } = await sb.auth.getSession();
       if (session) window.location.href = '/dashboard';
     })();
 
-    // Toggle password visibility
+    // Google OAuth
+    const googleBtn = document.getElementById('google-btn');
+    if (googleBtn) {
+      googleBtn.addEventListener('click', async () => {
+        console.log('Iniciando Google OAuth...');
+        try {
+          const { error } = await sb.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+              redirectTo: window.location.origin + '/dashboard',
+            },
+          });
+          if (error) showError(error.message);
+        } catch (err) {
+          console.error('Error Google:', err);
+          showError('Error de conexión con Google');
+        }
+      });
+    }
+
+    // Toggle password
     function togglePw() {
       const inp = document.getElementById('password');
       const show = inp.type === 'password';
@@ -548,25 +572,25 @@
         : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
     }
 
-    // Show error message
+    // Show error
     function showError(msg) {
       let el = document.getElementById('auth-error');
       if (!el) {
         el = document.createElement('div');
         el.id = 'auth-error';
         el.className = 'mb-4 rounded-xl bg-red-50 border border-red-100 text-red-700 px-4 py-3 text-sm font-medium';
-        document.getElementById('login-form').parentNode.insertBefore(el, document.getElementById('login-form'));
+        const form = document.getElementById('login-form');
+        form.parentNode.insertBefore(el, form);
       }
       el.textContent = msg;
       el.style.display = 'block';
     }
 
-    // Login with email/password
+    // Login Form
     document.getElementById('login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value.trim();
-
       if (!email || !password) { showError('Completa todos los campos'); return; }
 
       const btn = e.target.querySelector('button[type="submit"]');
@@ -574,34 +598,27 @@
       btn.innerHTML = '<span class="animate-spin">↻</span> Iniciando sesión...';
       btn.disabled = true;
 
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-
+      const { error } = await sb.auth.signInWithPassword({ email, password });
       if (error) {
         btn.innerHTML = orig;
         btn.disabled = false;
-        if (error.message.includes('Invalid login')) showError('Email o contraseña incorrectos');
-        else if (error.message.includes('Email not confirmed')) showError('Confirma tu email antes de iniciar sesión');
-        else showError(error.message);
+        showError(error.message.includes('Invalid login') ? 'Datos incorrectos' : error.message);
         return;
       }
-
       window.location.href = '/dashboard';
     });
 
-    // Google OAuth
-    document.querySelector('button[type="button"]').addEventListener('click', async function() {
-      // Find the Google button (the one inside the Social section)
-    });
+    // Testimonios
+    (function () {
+      const items = document.querySelectorAll('#testimonial-carousel .testimonial-item');
+      let idx = 0;
+      if (items.length > 1) setInterval(() => {
+        items[idx].classList.remove('active');
+        idx = (idx + 1) % items.length;
+        items[idx].classList.add('active');
+      }, 5000);
+    })();
 
-    // Attach Google handler to the correct button
-    document.querySelectorAll('button[type="button"]').forEach(btn => {
-      if (btn.textContent.trim().includes('Google')) {
-        btn.addEventListener('click', async () => {
-          const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
-          if (error) showError(error.message);
-        });
-      }
-    });
 
     // Acceso demo
     function goToDemo() {

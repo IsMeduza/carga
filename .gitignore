@@ -1,16 +1,15 @@
--e 
 # Environment files
 *.env
 *.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
+!*.env.example
+
+# Dependencies
+node_modules/
+
+# Build
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc

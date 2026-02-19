@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El fin de las comisiones: por qué el modelo de suscripción es el futuro - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <style>
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    /* ── Selection ── */
+    ::selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    ::-moz-selection {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ── Entrance animations ── */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes enterScale {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .anim-up {
+      animation: enterUp .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .anim-scale {
+      animation: enterScale .6s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .1s;
+    }
+
+    .delay-2 {
+      animation-delay: .2s;
+    }
+
+    .delay-3 {
+      animation-delay: .3s;
+    }
+
+    .delay-4 {
+      animation-delay: .4s;
+    }
+
+    .delay-5 {
+      animation-delay: .5s;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#A6CBE8]/20 via-[#BFD9EF]/40 to-[#EAE3D6]"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
+  </div>
+  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up">
+    <div class="flex items-center gap-2">
+      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
+      <a href="../../home.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
+        Nombre
+      </a>
+    </div>
+    <a href="../blog.html"
+      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al blog
+    </a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1">
+    <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
+      <div class="h-64 bg-gradient-to-br from-[#EFE6D8] via-[#F2EBE5] to-[#C5DFF7] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" class="opacity-60">
+          <line x1="12" x2="12" y1="2" y2="22"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
+          10 Jul 2026
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+          El fin de las comisiones: por qué el modelo de suscripción es el futuro
+        </h1>
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-slate-700 leading-relaxed mb-6">
+            El modelo de comisiones ha dominado la industria del transporte durante décadas, pero los tiempos están
+            cambiando.
+            Cada vez más empresas y transportistas están descubriendo los beneficios del modelo de suscripción, que
+            ofrece
+            previsibilidad, transparencia y relaciones más sólidas a largo plazo.
+          </p>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">El problema de las comisiones variables</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            El modelo tradicional de comisiones presenta varios desafíos tanto para empresas como para transportistas:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Incertidumbre financiera:</strong> Las comisiones variables hacen difícil predecir los costes
+              mensuales</li>
+            <li><strong>Falta de transparencia:</strong> A menudo no está claro cómo se calculan las comisiones</li>
+            <li><strong>Incentivos desalineados:</strong> El modelo puede incentivar volumen sobre calidad</li>
+            <li><strong>Relaciones transaccionales:</strong> Fomenta interacciones a corto plazo en lugar de
+              asociaciones estratégicas</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Las ventajas del modelo de suscripción</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            En Nombre, hemos adoptado un modelo de cuota fija que beneficia a todos los participantes del ecosistema
+            logístico:
+          </p>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para las empresas</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Previsibilidad presupuestaria:</strong> Costes fijos mensuales facilitan la planificación
+              financiera</li>
+            <li><strong>Acceso ilimitado:</strong> Sin costes adicionales por envío o porcentaje</li>
+            <li><strong>Mejor calidad del servicio:</strong> Transportistas más estables y comprometidos</li>
+            <li><strong>Relaciones a largo plazo:</strong> Fomenta asociaciones estratégicas con transportistas de
+              confianza</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para los transportistas</h3>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li><strong>Ingresos estables:</strong> Cuota mensual predecible independientemente del volumen</li>
+            <li><strong>Mejor planificación:</strong> Permite optimizar rutas y recursos con antelación</li>
+            <li><strong>Relaciones directas:</strong> Acceso a empresas sin intermediarios</li>
+            <li><strong>Crecimiento sostenible:</strong> Modelo que escala con el negocio de forma sostenible</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">El futuro es la suscripción</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            La tendencia hacia modelos de suscripción no es exclusiva del transporte. Industrias como el software,
+            el entretenimiento y los servicios han demostrado que los usuarios prefieren la previsibilidad y simplicidad
+            de las cuotas fijas.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            En el sector logístico, este cambio está impulsado por la necesidad de mayor eficiencia, transparencia
+            y sostenibilidad. Las empresas que adoptan modelos de suscripción están viendo mejoras significativas
+            en sus operaciones y relaciones con proveedores.
+          </p>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Cómo estamos liderando el cambio</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            En Nombre, no solo hemos implementado este modelo, sino que lo hemos perfeccionado basándonos en el feedback
+            de cientos de empresas y transportistas. Nuestra plataforma está diseñada para maximizar los beneficios
+            de la suscripción:
+          </p>
+          <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
+            <li>Tecnología que optimiza la asignación de cargas</li>
+            <li>Herramientas de comunicación directa entre empresas y transportistas</li>
+            <li>Analytics para mejorar la eficiencia operativa</li>
+            <li>Soporte continuo para ambos lados del marketplace</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Conclusión</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            El modelo de comisiones ha cumplido su función, pero el futuro del transporte pertenece a las suscripciones.
+            Ofrecen mayor transparencia, previsibilidad y fomentan relaciones más sólidas y beneficiosas para todos
+            los participantes.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-6">
+            Si estás listo para formar parte de esta transformación, te invitamos a descubrir cómo Nombre puede
+            revolucionar tu operación logística con nuestro modelo de suscripción.
+          </p>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-500">
+              Publicado el 10 de Julio de 2026
+            </div>
+            <div class="flex gap-4">
+              <a href="../blog.html" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                ← Volver al blog
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>
