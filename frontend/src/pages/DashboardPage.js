@@ -110,10 +110,10 @@ function DashboardPage() {
   const handleLogout = async () => {
     try {
       await signOut();
-      navigate('/login', { replace: true });
+      window.location.href = '/auth/login.html';
     } catch (err) {
       console.error('Logout error:', err);
-      navigate('/login', { replace: true });
+      window.location.href = '/auth/login.html';
     }
   };
 
@@ -191,9 +191,9 @@ function DashboardPage() {
             <MenuIcon />
           </button>
           <span className="mobile-title">{BRAND_NAME}</span>
-          <button 
+          <button
             type="button"
-            className="mobile-home-link" 
+            className="mobile-home-link"
             title="Volver a la web"
             onClick={() => window.location.href = '/'}
           >
@@ -259,9 +259,9 @@ function Sidebar({ currentPage, setCurrentPage, mobile, onClose, enviosCount, co
   return (
     <aside className={`sidebar ${mobile ? 'mobile' : ''} ${collapsed ? 'collapsed' : ''}`} onClick={e => e.stopPropagation()}>
       <div className="sidebar-header">
-        <button 
+        <button
           type="button"
-          className="logo-link" 
+          className="logo-link"
           onClick={() => window.location.href = '/'}
           style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         >

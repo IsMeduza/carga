@@ -39,7 +39,8 @@
       <img src="../assets/img/logo.svg" alt="Nombre">
       <a href="../home.html">Nombre</a>
     </div>
-    <a href="../home.html" class="back-link">
+    <a href="../home.html"
+      class="btn-shine magnetic-btn flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
@@ -51,7 +52,7 @@
     <!-- Header Section -->
     <div class="footer-page-header footer-page-anim-up footer-page-delay-1">
       <span class="footer-page-breadcrumb">Blog</span>
-      <h1 class="footer-page-title footer-page-anim-scale footer-page-delay-2">Noticias y recursos</h1>
+      <h1 class="footer-page-title footer-page-anim-up footer-page-delay-2">Noticias y recursos</h1>
       <p class="footer-page-subtitle footer-page-anim-up footer-page-delay-3">
         Las últimas novedades del sector logístico y actualizaciones de Nombre.
       </p>
@@ -208,5 +209,28 @@
     </div>
   </div>
 </body>
+
+<!-- Magnetic Button Effect Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const magneticButtons = document.querySelectorAll('.magnetic-btn');
+    
+    magneticButtons.forEach(button => {
+      const handleMouseMove = (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+      };
+      
+      const handleMouseLeave = () => {
+        button.style.transform = 'translate(0, 0)';
+      };
+      
+      button.addEventListener('mousemove', handleMouseMove);
+      button.addEventListener('mouseleave', handleMouseLeave);
+    });
+  });
+</script>
 
 </html>

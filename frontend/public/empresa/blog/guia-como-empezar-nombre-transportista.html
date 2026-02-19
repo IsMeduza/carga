@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="../../components/footer-page.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if ('scrollRestoration' in history) {
@@ -98,6 +99,40 @@
       animation-delay: .5s;
     }
   </style>
+
+  <!-- Shine Effect Styles -->
+  <style>
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: none;
+      z-index: 1;
+    }
+
+    .btn-shine:hover::after {
+      animation: btnSweep 0.6s ease forwards;
+    }
+
+    @keyframes btnSweep {
+      to {
+        left: 150%;
+      }
+    }
+
+    .magnetic-btn {
+      transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+  </style>
 </head>
 
 <body class="min-h-screen">
@@ -111,15 +146,13 @@
       src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
       alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
   </div>
-  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up">
-    <div class="flex items-center gap-2">
-      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
-      <a href="../../home.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
-        Nombre
-      </a>
+  <nav class="footer-page-nav footer-page-anim-up">
+    <div class="logo-section">
+      <img src="../../assets/img/logo.svg" alt="Nombre">
+      <a href="../../home.html">Nombre</a>
     </div>
     <a href="../blog.html"
-      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      class="btn-shine magnetic-btn flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
@@ -127,7 +160,7 @@
     </a>
   </nav>
 
-  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1">
+  <div class="footer-page-content anim-up delay-1">
     <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
       <div class="h-64 bg-gradient-to-br from-[#C5DFF7] via-[#F2EBE5] to-[#9AC1EB] flex items-center justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
@@ -140,7 +173,7 @@
         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
           15 Jun 2026
         </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
           Guía completa: cómo empezar en Nombre como transportista
         </h1>
         <div class="prose prose-slate max-w-none">
@@ -150,7 +183,9 @@
             ganar dinero con Nombre.
           </p>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">¿Por qué elegir Nombre?</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            ¿Por qué elegir Nombre?
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             Antes de empezar, es importante que conozcas las ventajas que te ofrecemos como transportista:
           </p>
@@ -164,13 +199,17 @@
             <li><strong>Soporte 24/7:</strong> Ayuda profesional cuando la necesites</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Requisitos mínimos para registrarte</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Requisitos mínimos para registrarte
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             Para garantizar la calidad y seguridad de nuestra plataforma, todos los transportistas deben cumplir
             con estos requisitos básicos:
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Requisitos legales y administrativos</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Requisitos legales y administrativos
+          </h3>
           <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
             <li>Estar dado de alta como autónomo o empresa en España</li>
             <li>Poseer licencia de transportista de mercancías vigente</li>
@@ -178,7 +217,9 @@
             <li>CIF y número de seguro de la seguridad social</li>
           </ul>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Requisitos operativos</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Requisitos operativos
+          </h3>
           <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
             <li>Mínimo de 2 años de experiencia en el sector</li>
             <li>Flota propia de vehículos adecuados y en buen estado</li>
@@ -186,7 +227,9 @@
             <li>Conductores con certificado profesional en vigor</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Paso 1: Preparación de documentos</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Paso 1: Preparación de documentos
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             Antes de iniciar el registro, ten preparada la siguiente documentación digitalizada:
           </p>
@@ -199,12 +242,16 @@
             <li><strong>Referencias:</strong> Cartas de recomendación de clientes actuales</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Paso 2: Registro inicial en la plataforma</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Paso 2: Registro inicial en la plataforma
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             El proceso de registro es sencillo y te tomará aproximadamente 15 minutos:
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Creación de cuenta</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Creación de cuenta
+          </h3>
           <ol class="list-decimal list-inside text-slate-700 mb-6 space-y-2">
             <li>Accede a <strong>nombre.es/transportistas</strong></li>
             <li>Haz clic en "Registrarse como transportista"</li>
@@ -213,7 +260,9 @@
             <li>Verifica tu email mediante el enlace que recibirás</li>
           </ol>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Perfil de empresa</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Perfil de empresa
+          </h3>
           <ol class="list-decimal list-inside text-slate-700 mb-6 space-y-2">
             <li>Completa información detallada de tu empresa</li>
             <li>Añade tu ubicación principal y áreas de cobertura</li>
@@ -222,19 +271,25 @@
             <li>Sube el logo y fotos de tus vehículos</li>
           </ol>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Paso 3: Proceso de verificación</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Paso 3: Proceso de verificación
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             Una vez completado tu perfil, iniciaremos nuestro proceso de verificación que suele tardar
             entre 3-5 días hábiles:
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Subida de documentación</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Subida de documentación
+          </h3>
           <p class="text-slate-700 leading-relaxed mb-6">
             Accederás a un área segura donde podrás subir toda tu documentación. Nuestro sistema la
             clasificará automáticamente y nuestro equipo la revisará manualmente.
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Verificación automatizada</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Verificación automatizada
+          </h3>
           <p class="text-slate-700 leading-relaxed mb-6">
             Nuestros sistemas cruzarán tu información con bases de datos oficiales para verificar:
           </p>
@@ -245,18 +300,24 @@
             <li>Ausencia de sanciones importantes</li>
           </ul>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Entrevista de validación</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Entrevista de validación
+          </h3>
           <p class="text-slate-700 leading-relaxed mb-6">
             Si todo es correcto, nuestro equipo te contactará para una breve entrevista (15-20 minutos)
             para validar tu experiencia y capacidad operativa.
           </p>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Paso 4: Aprobación y activación</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Paso 4: Aprobación y activación
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             Una vez aprobado, recibirás un email de bienvenida con acceso completo a la plataforma:
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Configuración inicial</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Configuración inicial
+          </h3>
           <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
             <li>Elige tu plan de suscripción (mensual, trimestral o anual)</li>
             <li>Configura tus preferencias de notificación</li>
@@ -410,6 +471,29 @@
       </div>
     </article>
   </div>
+
+  <!-- Magnetic Button Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const magneticButtons = document.querySelectorAll('.magnetic-btn');
+      
+      magneticButtons.forEach(button => {
+        const handleMouseMove = (e) => {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        };
+        
+        const handleMouseLeave = () => {
+          button.style.transform = 'translate(0, 0)';
+        };
+        
+        button.addEventListener('mousemove', handleMouseMove);
+        button.addEventListener('mouseleave', handleMouseLeave);
+      });
+    });
+  </script>
 </body>
 
 </html>

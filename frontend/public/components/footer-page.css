@@ -25,6 +25,39 @@ html {
   color: #ffffff;
 }
 
+/* ── Magnetic Button Effect ── */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* ── Button Shine Effect ── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: none;
+  z-index: 1;
+}
+
+.btn-shine:hover::after {
+  animation: btnSweep 0.6s ease forwards;
+}
+
+@keyframes btnSweep {
+  to {
+    left: 150%;
+  }
+}
+
 /* ── Background Layer ── */
 .footer-page-bg {
   position: fixed;
@@ -62,12 +95,12 @@ html {
 /* ── Navigation ── */
 .footer-page-nav {
   width: 100%;
+  max-width: 80rem;
   padding: 1.5rem 1.5rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 80rem;
   position: relative;
   z-index: 10;
 }

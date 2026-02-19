@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="../../components/footer-page.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if ('scrollRestoration' in history) {
@@ -98,6 +99,40 @@
       animation-delay: .5s;
     }
   </style>
+
+  <!-- Shine Effect Styles -->
+  <style>
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: none;
+      z-index: 1;
+    }
+
+    .btn-shine:hover::after {
+      animation: btnSweep 0.6s ease forwards;
+    }
+
+    @keyframes btnSweep {
+      to {
+        left: 150%;
+      }
+    }
+
+    .magnetic-btn {
+      transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+  </style>
 </head>
 
 <body class="min-h-screen">
@@ -111,15 +146,13 @@
       src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
       alt="Clouds" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen">
   </div>
-  <nav class="w-full px-6 py-6 md:px-12 flex items-center justify-between max-w-5xl mx-auto relative z-10 anim-up">
-    <div class="flex items-center gap-2">
-      <img src="../../assets/img/logo.svg" alt="Nombre" class="w-7 h-7">
-      <a href="../../home.html" class="text-xl font-semibold text-slate-900 tracking-tight ">
-        Nombre
-      </a>
+  <nav class="footer-page-nav footer-page-anim-up">
+    <div class="logo-section">
+      <img src="../../assets/img/logo.svg" alt="Nombre">
+      <a href="../../home.html">Nombre</a>
     </div>
     <a href="../blog.html"
-      class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      class="btn-shine magnetic-btn flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
@@ -127,7 +160,7 @@
     </a>
   </nav>
 
-  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16 relative z-10 anim-up delay-1">
+  <div class="footer-page-content anim-up delay-1">
     <article class="bg-white/60 backdrop-blur-md rounded-[24px] border border-white/50 shadow-sm overflow-hidden">
       <div class="h-64 bg-gradient-to-br from-[#EFE6D8] via-[#F2EBE5] to-[#C5DFF7] flex items-center justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white"
@@ -140,8 +173,8 @@
         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">
           10 Jul 2026
         </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 anim-scale delay-2">
-          El fin de las comisiones: por qué el modelo de suscripción es el futuro
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+          Fin de las comisiones: El modelo de suscripción del futuro
         </h1>
         <div class="prose prose-slate max-w-none">
           <p class="text-lg text-slate-700 leading-relaxed mb-6">
@@ -152,7 +185,9 @@
             previsibilidad, transparencia y relaciones más sólidas a largo plazo.
           </p>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">El problema de las comisiones variables</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            El problema de las comisiones tradicionales
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             El modelo tradicional de comisiones presenta varios desafíos tanto para empresas como para transportistas:
           </p>
@@ -165,13 +200,17 @@
               asociaciones estratégicas</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Las ventajas del modelo de suscripción</h2>
+          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+            Nuestro modelo de suscripción
+          </h2>
           <p class="text-slate-700 leading-relaxed mb-6">
             En Nombre, hemos adoptado un modelo de cuota fija que beneficia a todos los participantes del ecosistema
             logístico:
           </p>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para las empresas</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Para las empresas
+          </h3>
           <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
             <li><strong>Previsibilidad presupuestaria:</strong> Costes fijos mensuales facilitan la planificación
               financiera</li>
@@ -181,7 +220,9 @@
               confianza</li>
           </ul>
 
-          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">Para los transportistas</h3>
+          <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">
+            Para los transportistas
+          </h3>
           <ul class="list-disc list-inside text-slate-700 mb-6 space-y-2">
             <li><strong>Ingresos estables:</strong> Cuota mensual predecible independientemente del volumen</li>
             <li><strong>Mejor planificación:</strong> Permite optimizar rutas y recursos con antelación</li>
@@ -241,6 +282,29 @@
       </div>
     </article>
   </div>
+
+  <!-- Magnetic Button Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const magneticButtons = document.querySelectorAll('.magnetic-btn');
+      
+      magneticButtons.forEach(button => {
+        const handleMouseMove = (e) => {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        };
+        
+        const handleMouseLeave = () => {
+          button.style.transform = 'translate(0, 0)';
+        };
+        
+        button.addEventListener('mousemove', handleMouseMove);
+        button.addEventListener('mouseleave', handleMouseLeave);
+      });
+    });
+  </script>
 </body>
 
 </html>

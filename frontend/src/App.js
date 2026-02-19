@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import '@/App.css';
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { AuthProvider } from '@/context/AuthContext';
@@ -8,11 +8,7 @@ import { BRAND_NAME } from '@/constants';
 
 // Lazy loading
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
-const HomePage = lazy(() => import('@/pages/HomePage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
-const EmpresaPage = lazy(() => import('@/pages/EmpresaPage'));
-const LegalPage = lazy(() => import('@/pages/LegalPage'));
-
 // Redirect to static pages
 const RedirectTo = ({ path }) => {
   React.useEffect(() => {
@@ -38,17 +34,12 @@ function App() {
           <BrowserRouter>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/login" element={<RedirectTo path="/auth/login.html" />} />
-                <Route path="/register" element={<RedirectTo path="/auth/register.html" />} />
                 <Route path="/dashboard" element={
                   <ProtectedRoute>
                     <DashboardPage />
                   </ProtectedRoute>
                 } />
-                <Route path="/empresa/:page" element={<EmpresaPage />} />
-                <Route path="/legal/:page" element={<LegalPage />} />
                 <Route path="/" element={<RedirectTo path="/home.html" />} />
-                <Route path="/app" element={<HomePage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Suspense>
