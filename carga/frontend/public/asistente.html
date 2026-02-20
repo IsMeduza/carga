@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icono de Robot Animado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121418;
+            overflow: hidden;
+            font-family: system-ui, -apple-system, sans-serif;
+            perspective: 1000px; /* Necesario para el efecto 3D */
+        }
+        
+        /* Envoltorio para la animación de levitación independiente del 3D */
+        .floating-wrapper {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Contenedor principal con efecto de sombra dinámica */
+        .svg-container {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s linear, filter 0.3s ease;
+            /* Sombra inicial que reacciona con la levitación */
+            animation: shadowPulse 6s ease-in-out infinite;
+        }
+
+        /* Suavizado en el movimiento de las pupilas */
+        .pupil {
+            transition: transform 0.05s linear, fill 0.3s ease;
+        }
+        
+        .hint {
+            position: absolute;
+            bottom: 10%;
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .hint span {
+            display: block;
+            font-size: 0.7rem;
+            color: #444;
+            margin-top: 5px;
+        }
+
+        /* Animación de Levitación (Gravedad 0) */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Animación de la sombra (crece cuando el robot sube) */
+        @keyframes shadowPulse {
+            0% { filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 0 rgba(0, 255, 204, 0)); }
+            50% { filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(0, 255, 204, 0.15)); }
+            100% { filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 0 rgba(0, 255, 204, 0)); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hint">
+        Mueve el cursor
+    </div>
+
+    <div class="floating-wrapper">
+        <div class="svg-container" id="robot-container">
+            <!-- SVG del Robot -->
+            <svg id="robot" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2A2D34;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#141518;stop-opacity:1" />
+                    </linearGradient>
+
+                    <!-- Máscaras de recorte -->
+                    <clipPath id="leftEyeClip">
+                        <rect x="6.5" y="8" width="3" height="8" rx="1.5">
+                            <animate id="blinkLHeight" attributeName="height" values="8; 0; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                            <animate id="blinkLY" attributeName="y" values="8; 12; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                        </rect>
+                    </clipPath>
+                    
+                    <clipPath id="rightEyeClip">
+                        <rect x="14.5" y="8" width="3" height="8" rx="1.5">
+                            <animate id="blinkRHeight" attributeName="height" values="8; 0; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                            <animate id="blinkRY" attributeName="y" values="8; 12; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                        </rect>
+                    </clipPath>
+                </defs>
+                
+                <!-- Cuerpo / Fondo original -->
+                <path d="M0 11 Q0 0 11 0 L24 0 L24 13 Q24 24 13 24 L0 24 Z" fill="url(#logoGradient)"/>
+
+                <!-- Ojo Izquierdo (Contorno) -->
+                <rect x="6.5" y="8" width="3" height="8" rx="1.5" fill="none" stroke="#FFFFFF" stroke-width="0.75">
+                    <animate attributeName="height" values="8; 0; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="y" values="8; 12; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                </rect>
+                
+                <!-- Ojo Derecho (Contorno) -->
+                <rect x="14.5" y="8" width="3" height="8" rx="1.5" fill="none" stroke="#FFFFFF" stroke-width="0.75">
+                    <animate attributeName="height" values="8; 0; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="y" values="8; 12; 8; 8" keyTimes="0; 0.03; 0.06; 1" dur="4s" repeatCount="indefinite" />
+                </rect>
+
+                <!-- Pupilas -->
+                <g clip-path="url(#leftEyeClip)">
+                    <circle class="pupil" id="pupilL" cx="8" cy="12" r="1.2" fill="#FFFFFF" />
+                </g>
+                
+                <g clip-path="url(#rightEyeClip)">
+                    <circle class="pupil" id="pupilR" cx="16" cy="12" r="1.2" fill="#FFFFFF" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('robot-container');
+        const svg = document.getElementById('robot');
+        const pupilL = document.getElementById('pupilL');
+        const pupilR = document.getElementById('pupilR');
+        let isHovering = false;
+
+        document.addEventListener('mousemove', (e) => {
+            isHovering = true;
+            
+            const rect = svg.getBoundingClientRect();
+            const svgCenterX = rect.left + rect.width / 2;
+            const svgCenterY = rect.top + rect.height / 2;
+            
+            const deltaX = e.clientX - svgCenterX;
+            const deltaY = e.clientY - svgCenterY;
+            
+            // 1. Efecto Parallax 3D (El robot gira su cabeza hacia el ratón)
+            const rotateY = (deltaX / window.innerWidth) * 40;  // Max 20 grados
+            const rotateX = (deltaY / window.innerHeight) * -40; // Max 20 grados
+            
+            container.style.transform = rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05);
+
+            // 2. Seguimiento de las pupilas
+            const angle = Math.atan2(deltaY, deltaX);
+            const distance = Math.min(Math.sqrt(deltaX*deltaX + deltaY*deltaY) / 100, 1);
+            
+            const moveX = Math.cos(angle) * 0.6 * distance;
+            const moveY = Math.sin(angle) * 2.5 * distance;
+            
+            pupilL.setAttribute('transform', translate(${moveX}, ${moveY}));
+            pupilR.setAttribute('transform', translate(${moveX}, ${moveY}));
+        });
+
+        // Restaurar posición cuando el ratón sale de la pantalla
+        document.addEventListener('mouseleave', () => {
+            isHovering = false;
+            container.style.transform = rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+            pupilL.setAttribute('transform', translate(0, 0));
+            pupilR.setAttribute('transform', translate(0, 0));
+        });
+    </script>
+</body>
+</html>

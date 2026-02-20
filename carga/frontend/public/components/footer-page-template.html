@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PAGE_TITLE}} - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../components/footer-page.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
+  </script>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="footer-page-bg">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background">
+    <div class="gradient-overlay"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="footer-page-nav footer-page-anim-up">
+    <div class="logo-section">
+      <img src="../assets/img/logo.svg" alt="Nombre">
+      <a href="../home.html">Nombre</a>
+    </div>
+    <a href="../home.html" class="btn-shine magnetic-btn back-link">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver
+    </a>
+  </nav>
+
+  <!-- Content Container -->
+  <div class="footer-page-content">
+    <!-- Header Section -->
+    <div class="footer-page-header footer-page-anim-up footer-page-delay-1">
+      <span class="footer-page-breadcrumb">{{BREADCRUMB}}</span>
+      <h1 class="footer-page-title footer-page-anim-scale footer-page-delay-2">{{PAGE_TITLE}}</h1>
+      <p class="footer-page-subtitle footer-page-anim-up footer-page-delay-3">{{SUBTITLE}}</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="{{MAIN_CONTAINER_CLASS}}">
+      {{MAIN_CONTENT}}
+    </div>
+  </div>
+
+  <!-- Magnetic Button Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const magneticButtons = document.querySelectorAll('.magnetic-btn');
+      
+      magneticButtons.forEach(button => {
+        const handleMouseMove = (e) => {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        };
+        
+        const handleMouseLeave = () => {
+          button.style.transform = 'translate(0, 0)';
+        };
+        
+        button.addEventListener('mousemove', handleMouseMove);
+        button.addEventListener('mouseleave', handleMouseLeave);
+      });
+    });
+  </script>
+</body>
+
+</html>

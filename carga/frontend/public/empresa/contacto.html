@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Nombre</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../components/footer-page.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <style>
+    /* Shine Effect Styles */
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: none;
+      z-index: 1;
+    }
+
+    .btn-shine:hover::after {
+      animation: btnSweep 0.6s ease forwards;
+    }
+
+    @keyframes btnSweep {
+      to {
+        left: 150%;
+      }
+    }
+
+    .magnetic-btn {
+      transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Background Layer with Parallax -->
+  <div class="footer-page-bg">
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bfd2f4cf-65ed-4b1a-86d1-a1710619267b_1600w.png"
+      alt="Sky Background">
+    <div class="gradient-overlay"></div>
+    <img
+      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+      alt="Clouds">
+  </div>
+  <nav class="footer-page-nav footer-page-anim-up">
+    <div class="logo-section">
+      <img src="../assets/img/logo.svg" alt="Nombre">
+      <a href="../home.html">Nombre</a>
+    </div>
+    <a href="../home.html"
+      class="btn-shine magnetic-btn flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 text-sm font-medium text-slate-700 hover:bg-white/60 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver
+    </a>
+  </nav>
+
+  <div class="footer-page-content">
+    <!-- Header Section -->
+    <div class="footer-page-header footer-page-anim-up footer-page-delay-1">
+      <span class="footer-page-breadcrumb">Contacto</span>
+      <h1 class="footer-page-title footer-page-anim-up footer-page-delay-2">Hablemos</h1>
+      <p class="footer-page-subtitle footer-page-anim-up footer-page-delay-3">
+        ¿Tienes dudas? ¿Quieres una demo personalizada? Escríbenos y te contestamos en menos de 24h.
+      </p>
+    </div>
+    <!-- Main Content -->
+    <div class="footer-page-grid-3">
+      <div class="lg:col-span-2">
+        <div class="footer-page-card footer-page-anim-up">
+          <form class="footer-page-form space-y-5">
+            <div class="footer-page-grid-2">
+              <div>
+                <label>Nombre</label>
+                <input type="text" placeholder="Tu nombre">
+              </div>
+              <div>
+                <label>Email</label>
+                <input type="email" placeholder="tu@email.com">
+              </div>
+            </div>
+            <div>
+              <label>Empresa</label>
+              <input type="text" placeholder="Nombre de tu empresa (opcional)">
+            </div>
+            <div>
+              <label>Asunto</label>
+              <select>
+                <option>Información general</option>
+                <option>Solicitar una demo</option>
+                <option>Soporte técnico</option>
+                <option>Colaboraciones</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label>Mensaje</label>
+              <textarea rows="5" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+            </div>
+            <button type="submit" class="footer-page-btn">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="footer-page-info-card footer-page-anim-up footer-page-delay-2">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="info-title">Email</div>
+          <div class="info-content">hola@nombre.es</div>
+        </div>
+        <div class="footer-page-info-card footer-page-anim-up footer-page-delay-3">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.93 2H7a2 2 0 0 0 2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2h-1a2 2 0 0 0-2-2z"></path>
+            </svg>
+          </div>
+          <div class="info-title">Teléfono</div>
+          <div class="info-content">+34 900 123 456</div>
+        </div>
+        <div class="footer-page-info-card footer-page-anim-up footer-page-delay-4">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="info-title">Oficina</div>
+          <div class="info-content">
+            Calle Gran Vía 28, 4ª planta<br>
+            28013 Madrid, España
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- Magnetic Button Effect Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const magneticButtons = document.querySelectorAll('.magnetic-btn');
+    
+    magneticButtons.forEach(button => {
+      const handleMouseMove = (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+      };
+      
+      const handleMouseLeave = () => {
+        button.style.transform = 'translate(0, 0)';
+      };
+      
+      button.addEventListener('mousemove', handleMouseMove);
+      button.addEventListener('mouseleave', handleMouseLeave);
+    });
+  });
+</script>
+
+</html>
