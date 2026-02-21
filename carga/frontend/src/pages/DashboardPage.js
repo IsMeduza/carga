@@ -5,6 +5,22 @@ import './Dashboard.css';
 import { BRAND_NAME, PAGE_TITLES, API_URL } from '@/constants';
 import { useAuth } from '@/context/AuthContext';
 import { useDebounce } from '@/hooks/useDebounce';
+const DEMO_CARGAS = [
+  { "id": "c1", "origen": "Madrid", "destino": "Barcelona", "peso": 18, "distancia": 621, "precio": 1250, "tipo": "completa", "origen_coords": [-3.7038, 40.4168], "destino_coords": [2.1734, 41.3851], "descripcion": "Carga paletizada - 33 palets europeos" },
+  { "id": "c2", "origen": "Valencia", "destino": "Sevilla", "peso": 12, "distancia": 654, "precio": 980, "tipo": "parcial", "origen_coords": [-0.3763, 39.4699], "destino_coords": [-5.9845, 37.3891], "descripcion": "Mercancía textil en cajas" },
+  { "id": "c3", "origen": "Bilbao", "destino": "Madrid", "peso": 24, "distancia": 395, "precio": 890, "tipo": "urgente", "origen_coords": [-2.9253, 43.2630], "destino_coords": [-3.7038, 40.4168], "descripcion": "Piezas industriales - Entrega antes de 24h" },
+  { "id": "c4", "origen": "Zaragoza", "destino": "Valencia", "peso": 8, "distancia": 302, "precio": 620, "tipo": "frigorifico", "origen_coords": [-0.8773, 41.6488], "destino_coords": [-0.3763, 39.4699], "descripcion": "Productos refrigerados a 4°C" }
+];
+
+const DEMO_ENVIOS = [
+  { "id": "e1", "origen": "Madrid", "destino": "Barcelona", "peso": 18, "precio": 1250, "estado": "en_transito", "progreso": 65, "transportista": "Miguel Fernández" },
+  { "id": "e2", "origen": "Valencia", "destino": "Bilbao", "peso": 14, "precio": 1100, "estado": "en_transito", "progreso": 30, "transportista": "Ana García" }
+];
+
+const DEMO_TRANSPORTISTAS = [
+  { "id": "t1", "nombre": "Miguel Fernández", "email": "miguel@transporte.es", "vehiculo": "Tráiler 40t", "capacidad": 24, "rating": 4.8, "envios_completados": 234, "estado": "en_ruta" },
+  { "id": "t2", "nombre": "Ana García", "email": "ana@logistica.com", "vehiculo": "Camión rígido 12t", "capacidad": 12, "rating": 4.9, "envios_completados": 187, "estado": "en_ruta" }
+];
 
 // Main Dashboard Component
 function DashboardPage() {
@@ -42,31 +58,46 @@ function DashboardPage() {
       try {
         const res = await fetch(`${API_URL}/api/stats`);
         if (res.ok) { setStats(await res.json()); }
-      } catch (err) { console.warn('Stats fetch failed:', err); }
+      } catch (err) { console.warn('Stats fetch failed, using fallback metrics'); }
 
       try {
         const res = await fetch(`${API_URL}/api/cargas`);
         if (res.ok) {
           const data = await res.json();
           setCargas(data.cargas || data);
+        } else {
+          setCargas(DEMO_CARGAS);
         }
-      } catch (err) { console.warn('Cargas fetch failed:', err); }
+      } catch (err) {
+        console.warn('Cargas fetch failed, using demo data');
+        setCargas(DEMO_CARGAS);
+      }
 
       try {
         const res = await fetch(`${API_URL}/api/envios`);
         if (res.ok) {
           const data = await res.json();
           setEnvios(data.envios || data);
+        } else {
+          setEnvios(DEMO_ENVIOS);
         }
-      } catch (err) { console.warn('Envios fetch failed:', err); }
+      } catch (err) {
+        console.warn('Envios fetch failed, using demo data');
+        setEnvios(DEMO_ENVIOS);
+      }
 
       try {
         const res = await fetch(`${API_URL}/api/transportistas`);
         if (res.ok) {
           const data = await res.json();
           setTransportistas(data.transportistas || data);
+        } else {
+          setTransportistas(DEMO_TRANSPORTISTAS);
         }
-      } catch (err) { console.warn('Transportistas fetch failed:', err); }
+      } catch (err) {
+        console.warn('Transportistas fetch failed, using demo data');
+        setTransportistas(DEMO_TRANSPORTISTAS);
+      }
     };
 
     loadData();
@@ -133,6 +164,7 @@ function DashboardPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg, session_id: sessionId })
       });
+      if (!res.ok) throw new Error('Backend failed');
       const data = await res.json();
 
       if (!sessionId) setSessionId(data.session_id);
@@ -144,15 +176,43 @@ function DashboardPage() {
         actions: data.suggested_actions
       };
       setChatMessages(prev => [...prev, assistantMsg]);
-    } catch (e) {
-      console.error('Chat error:', e);
-      setChatMessages(prev => [...prev, {
-        role: 'assistant',
-        content: 'Lo siento, hubo un error. Intenta de nuevo.',
-        isError: true
-      }]);
-    } finally {
       setChatLoading(false);
+    } catch (e) {
+      console.warn('Chat API error, falling back to simulated logic:', e);
+      // Simulate backend response offline
+      setTimeout(() => {
+        const lowerMsg = msg.toLowerCase();
+        let response = "Puedo ayudarte a encontrar cargas. Prueba preguntando por una ciudad o tipo de carga.";
+        let cargasEncontradas = [];
+        const allCargas = cargas.length > 0 ? cargas : DEMO_CARGAS;
+
+        if (lowerMsg.includes("madrid") || lowerMsg.includes("barcelona")) {
+          cargasEncontradas = allCargas.filter(c =>
+            c.origen.toLowerCase().includes("madrid") || c.destino.toLowerCase().includes("barcelona") ||
+            c.origen.toLowerCase().includes("barcelona") || c.destino.toLowerCase().includes("madrid")
+          );
+          response = `He encontrado ${cargasEncontradas.length} cargas relacionadas con Madrid/Barcelona:`;
+        } else if (lowerMsg.includes("valencia")) {
+          cargasEncontradas = allCargas.filter(c =>
+            c.origen.toLowerCase().includes("valencia") || c.destino.toLowerCase().includes("valencia")
+          );
+          response = `He encontrado ${cargasEncontradas.length} cargas relacionadas con Valencia:`;
+        } else if (lowerMsg.includes("urgente")) {
+          cargasEncontradas = allCargas.filter(c => c.tipo === "urgente");
+          response = `Hay ${cargasEncontradas.length} cargas urgentes disponibles:`;
+        } else if (lowerMsg.includes("hola") || lowerMsg.includes("ayuda")) {
+          response = "¡Hola! Puedes preguntarme sobre cargas por ciudad (Madrid, Barcelona, Valencia) o tipo (urgente, frigorífico, etc.).";
+        }
+
+        const assistantMsg = {
+          role: 'assistant',
+          content: response,
+          cargas: cargasEncontradas,
+          actions: ["Ver mapa", "Filtrar cargas"]
+        };
+        setChatMessages(prev => [...prev, assistantMsg]);
+        setChatLoading(false);
+      }, 700);
     }
   };
 
@@ -398,11 +458,9 @@ function Sidebar({ user, currentPage, setCurrentPage, mobile, onClose, enviosCou
       {!collapsed && (
         <div className="sidebar-footer">
           <div className="user-info">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
-              alt="Avatar"
-              className="user-avatar"
-            />
+            <div className="user-avatar">
+              <UserIcon />
+            </div>
             <div className="user-details">
               <p className="user-name">{user?.user_metadata?.first_name ? `${user.user_metadata.first_name} ${user.user_metadata.last_name || ''}` : 'Carlos Lopez'}</p>
               <p className="user-email">{user?.email || 'carlos@empresa.com'}</p>
@@ -416,11 +474,9 @@ function Sidebar({ user, currentPage, setCurrentPage, mobile, onClose, enviosCou
       )}
       {collapsed && (
         <div className="sidebar-footer-collapsed">
-          <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
-            alt="Avatar"
-            className="user-avatar-mini"
-          />
+          <div className="user-avatar-mini user-avatar">
+            <UserIcon />
+          </div>
         </div>
       )}
     </aside>
@@ -446,13 +502,13 @@ function PanelPage({ user, stats, setCurrentPage, cargas, envios, onAcceptCarga,
       {/* Top Header Row */}
       <div className="mockup-header">
         <div className="mockup-user">
-          <motion.img
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
-            alt="User"
-            className="mockup-avatar"
-          />
+            className="mockup-avatar user-avatar"
+          >
+            <UserIcon />
+          </motion.div>
           <div className="mockup-user-info">
             <motion.h2
               initial={{ x: -20, opacity: 0 }}
@@ -803,12 +859,13 @@ function ProMapaPage({ cargas, onAccept, selectedCarga, setSelectedCarga }) {
       style: 'mapbox://styles/mapbox/light-v11',
       center: [-3.7038, 40.4168],
       zoom: 5.5,
+      minZoom: 5.2, // Añadimos esto para evitar que se alejen demasiado y vean todo el mundo
       pitch: 0,
       // Performance optimizations
       fadeDuration: 0,
       trackResize: true,
       refreshExpiredTiles: false,
-      maxBounds: [[-18.16, 27.63], [4.33, 43.79]] // Spain approximate bounds
+      maxBounds: [[-18.5, 27.0], [4.5, 44.5]] // Límites todavía más ajustados a España (con Canarias incluidas)
     });
 
     // Resize observer to fix map expansion issues
@@ -830,44 +887,46 @@ function ProMapaPage({ cargas, onAccept, selectedCarga, setSelectedCarga }) {
         url: 'mapbox://mapbox.country-boundaries-v1'
       });
 
-      // Higher-level mask to cover labels and features outside Spain
-      try {
-        if (map.current.getLayer('water')) {
-          map.current.setPaintProperty('water', 'fill-color', '#FAFAF9');
-        }
-        map.current.setPaintProperty('background', 'background-color', '#FAFAF9');
-      } catch (e) { }
+      // Enfoque Premium: En lugar de usar una "máscara" opaca cutre que rompe el mar y las fronteras,
+      // dejamos el exquisito mapa base (light-v11). Solo atenuamos con blanco semitransparente a los vecinos
+      // y destacamos a España con un mínimo toque azul. Esto mantiene el contexto geográfico real.
 
+      // 1. Atenuar los países vecinos para dar protagonismo a España
       map.current.addLayer({
-        id: 'country-mask',
+        id: 'other-countries-dim',
         type: 'fill',
         source: 'country-boundaries',
         'source-layer': 'country_boundaries',
         paint: {
-          'fill-color': '#FAFAF9',
-          'fill-opacity': 1.0
+          'fill-color': '#ffffff',
+          'fill-opacity': 0.6
         },
         filter: ['!=', ['get', 'iso_3166_1_alpha_3'], 'ESP']
       });
 
-      // 2. Hide specific labels/elements that might still leak (like country names over sea)
-      const layers = map.current.getStyle().layers;
-      layers.forEach(layer => {
-        if (layer.id.includes('country-label') || layer.id.includes('admin-')) {
-          map.current.setLayoutProperty(layer.id, 'visibility', 'none');
-        }
+      // 2. Destacar ligeramente el interior de España
+      map.current.addLayer({
+        id: 'spain-fill',
+        type: 'fill',
+        source: 'country-boundaries',
+        'source-layer': 'country_boundaries',
+        paint: {
+          'fill-color': '#3b82f6',
+          'fill-opacity': 0.02
+        },
+        filter: ['==', ['get', 'iso_3166_1_alpha_3'], 'ESP']
       });
 
-      // 3. Highlight Spain boundary sutilmente
+      // 3. Borde elegante para España
       map.current.addLayer({
         id: 'spain-highlight',
         type: 'line',
         source: 'country-boundaries',
         'source-layer': 'country_boundaries',
         paint: {
-          'line-color': '#000000',
-          'line-width': 1,
-          'line-opacity': 0.05
+          'line-color': '#1A1A1A',
+          'line-width': 1.5,
+          'line-opacity': 0.15
         },
         filter: ['==', ['get', 'iso_3166_1_alpha_3'], 'ESP']
       });
@@ -1968,7 +2027,7 @@ function EnhancedChatWidget({ open, setOpen, messages, input, setInput, onSend, 
                   <div key={i} className={`chat-message ${msg.role} ${msg.isError ? 'error' : ''}`}>
                     {msg.role === 'assistant' && (
                       <div className="assistant-avatar">
-                        <BotIcon />
+                        <PremiumBotIconStatic />
                       </div>
                     )}
                     <div className="message-wrapper">
@@ -2027,7 +2086,7 @@ function EnhancedChatWidget({ open, setOpen, messages, input, setInput, onSend, 
 
                 {loading && (
                   <div className="chat-message assistant">
-                    <div className="assistant-avatar"><BotIcon /></div>
+                    <div className="assistant-avatar"><PremiumBotIconStatic /></div>
                     <div className="message-wrapper">
                       <div className="typing-indicator">
                         <span></span><span></span><span></span>
@@ -2193,8 +2252,7 @@ const BotIcon = ({ size = 24, showParallax = true, whiteTheme = false }) => {
       window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [showParallax]);
-
-  const bodyFill = whiteTheme ? '#FFFFFF' : `url(#grad-${id})`;
+  const bodyFill = whiteTheme ? `url(#grad-white-${id})` : `url(#grad-${id})`;
   const eyeStroke = whiteTheme ? '#000000' : '#FFFFFF';
   const pupilFill = whiteTheme ? '#000000' : '#FFFFFF';
 
@@ -2208,7 +2266,12 @@ const BotIcon = ({ size = 24, showParallax = true, whiteTheme = false }) => {
       >
         <svg ref={svgRef} width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
           <defs>
-            {!whiteTheme && (
+            {whiteTheme ? (
+              <linearGradient id={`grad-white-${id}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: '#A0A0A0', stopOpacity: 1 }} />
+              </linearGradient>
+            ) : (
               <linearGradient id={`grad-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style={{ stopColor: '#2D2D33', stopOpacity: 1 }} />
                 <stop offset="100%" style={{ stopColor: '#141416', stopOpacity: 1 }} />
@@ -2259,13 +2322,14 @@ const BotIcon = ({ size = 24, showParallax = true, whiteTheme = false }) => {
   );
 };
 
-// Componente de robot premium - usa el SVG bot-icon-white.svg
+// Componente de robot premium - usa el SVG integrado interactivo
 const PremiumBotIcon = () => (
-  <img 
-    src="/assets/img/bot-icon-white.svg" 
-    alt="Bot Premium" 
-    style={{ width: 42, height: 42 }}
-  />
+  <BotIcon size={42} showParallax={false} whiteTheme={true} />
+);
+
+// Componente interactivo para mensajes (con seguimiento de ojos, versión normal)
+const PremiumBotIconStatic = () => (
+  <BotIcon size={24} showParallax={false} whiteTheme={false} />
 );
 
 

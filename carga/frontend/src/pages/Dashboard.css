@@ -417,10 +417,18 @@ body {
 .user-avatar-mini {
   width: 44px;
   height: 44px;
+  background: #1A1A1A;
   border-radius: 12px;
-  border: 2px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.user-avatar-mini svg {
+  width: 16px;
+  height: 16px;
 }
 
 .demo-dot {
@@ -1495,23 +1503,7 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #CBD5E1 transparent;
   -webkit-overflow-scrolling: touch;
-}
-
-.filter-bar::-webkit-scrollbar {
-  height: 8px;
-  display: block;
-}
-
-.filter-bar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.filter-bar::-webkit-scrollbar-thumb {
-  background-color: #CBD5E1;
-  border-radius: 4px;
 }
 
 .filter-tipos {
@@ -3192,7 +3184,7 @@ body {
 /* Welcome Screen */
 .chat-welcome {
   text-align: center;
-  padding: 20px 10px;
+  padding: 0px 10px;
 }
 
 /* Bot Icon Styles (Unified) */
@@ -3404,7 +3396,6 @@ body {
 .assistant-avatar {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #1A1A1A 0%, #333 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -3426,7 +3417,7 @@ body {
 .user-avatar {
   width: 32px;
   height: 32px;
-  background: #3b82f6;
+  background: #1A1A1A;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -3879,6 +3870,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -3948,10 +3940,20 @@ body {
 }
 
 .mockup-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 64px;
+  height: 64px;
+  background: #1A1A1A;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.mockup-avatar svg {
+  width: 24px;
+  height: 24px;
 }
 
 .mockup-user-info h2 {
