@@ -39,7 +39,7 @@ function App() {
                     <DashboardPage />
                   </ProtectedRoute>
                 } />
-                <Route path="/" element={<RedirectTo path="/home.html" />} />
+                <Route path="/" element={<RedirectTo path="/inici.html" />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Suspense>

@@ -4351,3 +4351,438 @@ body {
 .mockup-actions {
   position: relative;
 }
+
+/* ============================
+   FACTURAS PAGE
+   ============================ */
+.facturas-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.facturas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.facturas-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.facturas-table th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.facturas-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.facturas-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.factura-id {
+  font-weight: 600;
+  color: #1A1A1A !important;
+  font-family: monospace;
+}
+
+.factura-importe {
+  font-weight: 700;
+  color: #1A1A1A !important;
+}
+
+.icon-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: #f1f5f9;
+  color: #1A1A1A;
+  border-color: #cbd5e1;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem;
+  color: #94a3b8;
+}
+
+.empty-state svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+}
+
+/* Badge estados facturas */
+.envio-badge.pagada {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.envio-badge.vencida {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ============================
+   ESTADISTICAS PAGE
+   ============================ */
+.tipos-carga-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.tipo-carga-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tipo-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.tipo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tipo-name {
+  flex: 1;
+  color: #334155;
+  font-weight: 500;
+}
+
+.tipo-pct {
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.tipo-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tipo-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.top-rutas-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ruta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.ruta-row:last-child {
+  border-bottom: none;
+}
+
+.ruta-row:hover {
+  background: #f8fafc;
+}
+
+.ruta-rank {
+  font-weight: 700;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  min-width: 28px;
+}
+
+.ruta-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ruta-name {
+  font-weight: 600;
+  color: #1A1A1A;
+  font-size: 0.875rem;
+}
+
+.ruta-detail {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.ruta-ingresos {
+  font-weight: 700;
+  color: #1A1A1A;
+  font-size: 0.875rem;
+}
+
+/* ============================
+   AJUSTES PAGE
+   ============================ */
+.ajustes-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  min-height: 500px;
+}
+
+.ajustes-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  height: fit-content;
+}
+
+.ajuste-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.ajuste-tab:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.ajuste-tab.active {
+  background: #1A1A1A;
+  color: #fff;
+}
+
+.ajustes-content {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+}
+
+.ajuste-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 1.5rem;
+}
+
+.ajuste-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #1A1A1A;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1A1A1A;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+.form-group input[type="range"] {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  accent-color: #1A1A1A;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #334155;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-list input[type="checkbox"] {
+  accent-color: #1A1A1A;
+  width: 16px;
+  height: 16px;
+}
+
+/* Toggles */
+.toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.toggle-item:last-child {
+  border-bottom: none;
+}
+
+.toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.toggle-label {
+  font-weight: 600;
+  color: #1A1A1A;
+  font-size: 0.875rem;
+}
+
+.toggle-desc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.toggle-switch {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: #e2e8f0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.toggle-switch.active {
+  background: #1A1A1A;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.toggle-switch.active .toggle-knob {
+  transform: translateX(22px);
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .ajustes-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ajustes-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .ajuste-tab span {
+    display: none;
+  }
+
+  .ajuste-form {
+    grid-template-columns: 1fr;
+  }
+
+  .facturas-table {
+    font-size: 0.75rem;
+  }
+
+  .facturas-table th,
+  .facturas-table td {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "carga-frontend",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["node_modules/@craco/craco/dist/bin/craco.js", "start"],
+      "port": 3000,
+      "cwd": "carga/frontend"
+    }
+  ]
+}

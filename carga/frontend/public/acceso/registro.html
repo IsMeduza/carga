@@ -370,7 +370,7 @@
         <div class="max-w-md mx-auto space-y-6">
 
           <!-- Logo -->
-          <a href="/home.html" class="inline-flex items-center gap-2.5 group anim-up">
+          <a href="/inici.html" class="inline-flex items-center gap-2.5 group anim-up">
             <img src="/assets/img/logo-white.svg" alt="Nombre"
               class="w-9 h-9 transition-transform duration-300 nav-logo-mark">
             <span class="text-xl font-extrabold tracking-tight text-white">Nombre</span>
@@ -492,7 +492,7 @@
 
         <!-- Mobile logo -->
         <div class="auth-mobile-logo lg:hidden text-center mb-6 anim-up">
-          <a href="/home.html" class="inline-flex items-center gap-2.5">
+          <a href="/inici.html" class="inline-flex items-center gap-2.5">
             <img src="/assets/img/logo-white.svg" alt="Nombre" class="w-8 h-8 nav-logo-mark">
             <span class="text-xl font-extrabold text-slate-900 tracking-tight">Nombre</span>
           </a>
@@ -503,7 +503,7 @@
           class="auth-card bg-white rounded-none sm:rounded-[24px] border-0 sm:border border-slate-200/80 shadow-none sm:shadow-xl sm:shadow-black/[0.04] p-4 sm:p-6 anim-up delay-1 min-h-screen sm:min-h-0">
           <!-- Back Button (Absolute Positioning) -->
           <div class="absolute top-5 left-2 sm:top-9 sm:left-3">
-            <a href="/home.html"
+            <a href="/inici.html"
               class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-900 transition-colors font-medium">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -733,7 +733,7 @@
 
           <!-- Login link -->
           <p class="text-center text-sm text-slate-500 mt-6">
-            ¿Ya tienes cuenta? <a href="/auth/login.html" class="font-semibold text-slate-900 hover:underline">Inicia
+            ¿Ya tienes cuenta? <a href="/acceso/login.html" class="font-semibold text-slate-900 hover:underline">Inicia
               sesión</a>
           </p>
         </div>
@@ -872,7 +872,7 @@
 
         // Manejar el caso de que la cuenta ya exista
         if (error.status === 422 || error.message.includes('already registered')) {
-          showMsg('Este email ya está registrado. <a href="/auth/login.html" class="font-semibold underline">Inicia sesión</a>', 'error');
+          showMsg('Este email ya está registrado. <a href="/acceso/login.html" class="font-semibold underline">Inicia sesión</a>', 'error');
           return;
         }
 
@@ -880,7 +880,7 @@
         return;
       }
 
-      showMsg('¡Cuenta creada! Revisa tu email para confirmar. <a href="/auth/login.html" class="font-semibold underline">Ir a iniciar sesión</a>', 'success');
+      showMsg('¡Cuenta creada! Revisa tu email para confirmar. <a href="/acceso/login.html" class="font-semibold underline">Ir a iniciar sesión</a>', 'success');
       document.getElementById('reg-form').style.display = 'none';
     });
 

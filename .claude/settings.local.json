@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.errecegestion.com)",
+      "Bash(git -C /i/finitue log --oneline -15)",
+      "Bash(npx react-scripts build)",
+      "Bash(npm run build:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls:*)"
+    ]
+  }
+}

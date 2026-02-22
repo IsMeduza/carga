@@ -139,7 +139,7 @@
       will-change: transform;
     }
 
-    /* Premium card lift effect */
+    /* Max card lift effect */
     .feature-card,
     .small-feature-card,
     .pricing-card,
@@ -507,7 +507,7 @@
       top: 0.75rem !important;
     }
 
-    #main-nav.scrolled .nav-cta[href="/auth/login.html"] {
+    #main-nav.scrolled .nav-cta[href="/acceso/login.html"] {
       background: transparent !important;
       border: none !important;
       box-shadow: none !important;
@@ -734,7 +734,7 @@
       <!-- Nav Links (desktop) -->
       <div class="hidden items-center gap-0.5 mx-auto relative md:flex" id="nav-pills-container">
         <!-- Sliding indicator -->
-        <div id="nav-slide-indicator" class="absolute rounded-full pointer-events-none" style="opacity:0;"></div>
+        <div id="nav-slide-indicator" class="absolute rounded-full pointer-events-none"></div>
         <a href="#producto"
           class="nav-pill nav-link relative px-5 py-2.5 rounded-full text-[14px] font-semibold text-slate-500 transition-colors duration-300 z-[1]">
           Producto
@@ -759,13 +759,13 @@
           <span>Ir al panel</span>
         </a>
         <!-- Login Button -->
-        <a href="/auth/login.html" id="nav-login-btn"
+        <a href="/acceso/login.html" id="nav-login-btn"
           class="btn-shine magnetic-btn hidden bg-white/40 backdrop-blur-md border border-white/50 text-[#1A1A1A] text-[14px] font-medium px-5 py-2.5 rounded-full hover:bg-white/60 transition-all w-full sm:w-auto items-center justify-center gap-2 md:flex">
           <span>Iniciar sesión</span>
         </a>
         <!-- Register Button -->
-        <a href="/auth/register.html" id="nav-register-btn"
-          class="btn-shine magnetic-btn hidden bg-[#1A1A1A] text-white text-[14px] font-bold px-6 py-2.5 rounded-full items-center gap-2 shadow-lg hover:bg-black hover:shadow-xl transition-all md:inline-flex">
+        <a href="/acceso/registro.html" id="nav-register-btn"
+          class="btn-shine magnetic-btn hidden bg-[#1A1A1A] text-white text-[14px] px-6 py-2.5 rounded-full items-center gap-2 shadow-lg hover:bg-black hover:shadow-xl transition-all md:inline-flex">
           <span>Crear cuenta</span>
         </a>
         <button id="mobile-menu-btn"
@@ -792,10 +792,10 @@
       <nav class="flex flex-col items-center gap-2">
         <a href="/dashboard" id="mobile-nav-dashboard-btn"
           class="hidden mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Ir al panel</a>
-        <a href="/auth/login.html" id="mobile-nav-login-btn"
+        <a href="/acceso/login.html" id="mobile-nav-login-btn"
           class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Iniciar
           sesión</a>
-        <a href="/auth/register.html" id="mobile-nav-register-btn"
+        <a href="/acceso/registro.html" id="mobile-nav-register-btn"
           class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Crear
           cuenta</a>
         <a href="#producto" class="mobile-nav-item text-3xl font-bold text-slate-900 py-3 px-6">Producto</a>
@@ -809,8 +809,7 @@
       class="flex-grow flex flex-col w-full max-w-7xl mr-auto ml-auto pt-10 pr-4 pb-12 pl-4 items-center md:pr-12 md:pl-12 md:pb-20 md:pt-16">
       <div class="p-5 text-center max-w-4xl mt-6 mr-auto mb-6 ml-auto md:p-12 md:mt-24 md:mb-24">
         <h1 id="hero-title"
-          class="leading-[1] text-4xl font-bold text-[#1A1A1A] tracking-tight mb-5 md:text-6xl md:mb-8"
-          style="opacity:0;">
+          class="leading-[1] text-4xl font-bold text-[#1A1A1A] tracking-tight mb-5 md:text-6xl md:mb-8">
           <span class="hero-word">El</span>
           <span class="hero-word">transporte</span>
           <span class="hero-word">que</span>
@@ -3477,8 +3476,10 @@
               <div
                 class="testimonial-card w-[340px] bg-white p-5 rounded-[32px] shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition-shadow duration-300 md:w-[420px] md:p-10">
                 <p class="text-[17px] leading-relaxed text-slate-600 mb-4 md:mb-8">
-                  "Con 50 envíos al mes, las comisiones de la bolsa de carga anterior nos costaban más de 3.000€. Ahora
-                  pagamos una cuota fija y el resto lo ponemos en rentabilizar las rutas. Las cuentas son claras."
+                  "Con 50 envíos al mes, las comisiones de la bolsa de carga anterior nos costaban más de 3.00
+                <div class="price-monthly"><span class="text-4xl font-bold"><span class="animate-number"
+                      data-value="19">0</span>€</span><span class="text-slate-500 text-sm">/mes</span></div>. Ahora
+                pagamos una cuota fija y el resto lo ponemos en rentabilizar las rutas. Las cuentas son claras."
                 </p>
                 <div class="flex items-center gap-3">
                   <img
@@ -3850,412 +3851,7 @@
       </div>
     </section>
     <!-- Pricing Section -->
-    <section id="precios" class="w-full max-w-7xl mx-auto pt-24 pb-32 px-6 relative z-10">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-        <span class="section-label text-xs font-bold tracking-widest text-slate-500 uppercase mb-4 block"
-          style="opacity:0;">
-          Planes y Precios
-        </span>
-        <h2 class="section-title text-3xl font-semibold text-[#1A1A1A] tracking-tight mb-6 md:text-5xl md:mb-8"
-          style="opacity:0;">
-          Elige el plan que mejor se adapte a tu negocio
-        </h2>
-        <p class="section-desc text-lg text-slate-600 font-medium max-w-2xl mx-auto" style="opacity:0;">
-          Sin comisiones por carga. Sin permanencia. Comienza hoy mismo con nuestra prueba gratuita de 14 días.
-        </p>
-
-        <!-- Billing Toggle -->
-        <div class="pricing-header-reveal flex items-center justify-center gap-4 mt-10" style="opacity:0;">
-          <span id="label-mensual" class="text-sm font-bold text-slate-700 transition-colors">Mensual</span>
-          <button id="billing-toggle"
-            class="relative w-14 h-8 bg-slate-200 rounded-full p-1 transition-colors hover:bg-slate-300 transition-all duration-300 group">
-            <div id="billing-knob"
-              class="w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300"></div>
-          </button>
-          <span id="label-anual" class="text-sm font-bold text-slate-500 transition-colors">Anual <span
-              class="text-green-600 ml-1 text-xs">-20%</span></span>
-        </div>
-
-        <!-- Persona Tabs -->
-        <div
-          class="pricing-header-reveal flex flex-wrap items-center justify-center gap-3 mt-12 bg-white/40 backdrop-blur-md p-2 rounded-[2rem] border border-white/50 w-fit mx-auto shadow-sm"
-          style="opacity:0;">
-          <button class="persona-tab active flex items-center gap-3 px-6 py-3 rounded-full transition-all group"
-            data-category="transportistas">
-            <div
-              class="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center transition-all duration-300">
-              <i data-lucide="truck" class="w-5 h-5"></i>
-            </div>
-            <span class="text-sm font-bold text-slate-900">Autónomos</span>
-          </button>
-          <button class="persona-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all group"
-            data-category="flotas">
-            <div
-              class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-200">
-              <i data-lucide="users" class="w-5 h-5"></i>
-            </div>
-            <span class="text-sm font-bold text-slate-900">Flotas</span>
-          </button>
-          <button class="persona-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all group"
-            data-category="generadores">
-            <div
-              class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-200">
-              <i data-lucide="factory" class="w-5 h-5"></i>
-            </div>
-            <span class="text-sm font-bold text-slate-900">Cargadores</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Plans Containers -->
-      <div id="plans-container" class="relative min-h-[500px]">
-
-        <!-- Category: Transportistas -->
-        <div id="plans-transportistas"
-          class="plans-category grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          <!-- Card 1 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full anim-up">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Básico</h3>
-              <p class="text-sm text-slate-500 font-medium">Para autónomos que empiezan.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-slate-900">0€</span>
-              <span class="text-slate-500 text-sm">/mes</span>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Mapa de cargas en vivo
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> 1 camión gestionado
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-300">
-                <i data-lucide="x" class="w-4 h-4"></i> Prioridad en cargas
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Seleccionar
-              plan</button>
-          </div>
-          <!-- Card 2 (Featured) -->
-          <div
-            class="pricing-card featured bg-[#1A1A1A] text-white p-8 rounded-[32px] shadow-2xl flex flex-col items-start gap-6 transition-all h-full z-10 anim-up">
-            <div class="w-full flex justify-between items-start">
-              <div>
-                <h3 class="text-xl font-bold mb-2">Profesional</h3>
-                <p class="text-sm text-slate-400 font-medium">El más popular para autónomos.</p>
-              </div>
-              <span
-                class="bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest animate-pulse">Recomendado</span>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-5xl font-bold"><span class="animate-number" data-value="29">0</span>€</span>
-                <span class="text-slate-400 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-5xl font-bold"><span class="animate-number" data-value="23">0</span>€</span>
-                  <span class="text-slate-400 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-1 opacity-80">
-                  <span class="animate-number" data-value="276">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-white/10 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Prioridad alta en cargas
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Facturación automática
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Hasta 3 camiones
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Seguimiento GPS básico
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-white text-[#1A1A1A] font-bold text-sm hover:bg-slate-100 transition-colors shadow-lg">Comenzar
-              14 días gratis</button>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full anim-up">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Premium</h3>
-              <p class="text-sm text-slate-500 font-medium">Para transportistas de élite.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-4xl font-bold"><span class="animate-number" data-value="49">0</span>€</span>
-                <span class="text-slate-500 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-4xl font-bold"><span class="animate-number" data-value="39">0</span>€</span>
-                  <span class="text-slate-500 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1 opacity-60">
-                  <span class="animate-number" data-value="468">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Prioridad máxima (VIP)
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Camiones ilimitados
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Soporte 24/7 dedicado
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Sello de Verificado Premium
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Seleccionar
-              plan</button>
-          </div>
-        </div>
-
-        <!-- Category: Flotas -->
-        <div id="plans-flotas"
-          class="plans-category grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch hidden">
-          <!-- Card 1 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full anim-up">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">PYME</h3>
-              <p class="text-sm text-slate-500 font-medium">Para pequeñas flotas en crecimiento.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-4xl font-bold"><span class="animate-number" data-value="89">0</span>€</span>
-                <span class="text-slate-500 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-4xl font-bold"><span class="animate-number" data-value="72">0</span>€</span>
-                  <span class="text-slate-500 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1 opacity-60">
-                  <span class="animate-number" data-value="864">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Hasta 5 camiones
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Panel de gestión de flota
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Informes de rendimiento
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Seleccionar
-              plan</button>
-          </div>
-          <!-- Card 2 (Featured) -->
-          <div
-            class="pricing-card featured bg-[#1A1A1A] text-white p-8 rounded-[32px] shadow-2xl flex flex-col items-start gap-6 transition-all h-full z-10 anim-up">
-            <div class="w-full flex justify-between items-start">
-              <div>
-                <h3 class="text-xl font-bold mb-2">Empresa</h3>
-                <p class="text-sm text-slate-400 font-medium">Gestión total de tu equipo.</p>
-              </div>
-              <span
-                class="bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest animate-pulse">Popular</span>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-5xl font-bold"><span class="animate-number" data-value="199">0</span>€</span>
-                <span class="text-slate-400 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-5xl font-bold"><span class="animate-number" data-value="159">0</span>€</span>
-                  <span class="text-slate-400 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-1 opacity-80">
-                  <span class="animate-number" data-value="1908">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-white/10 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Hasta 20 camiones
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Documentación digital avanzada
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Integración API básica
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Panel multi-usuario
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-white text-[#1A1A1A] font-bold text-sm hover:bg-slate-100 transition-colors shadow-lg">Contactar
-              ventas</button>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Corporativo</h3>
-              <p class="text-sm text-slate-500 font-medium">Soluciones a medida para grandes flotas.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-slate-900">Personalizado</span>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Camiones ilimitados
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> API completa y Webhooks
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Gestor de cuenta dedicado
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Seguridad nivel empresarial
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar
-              demo</button>
-          </div>
-        </div>
-
-        <!-- Category: Cargadores -->
-        <div id="plans-generadores"
-          class="plans-category grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch hidden">
-          <!-- Card 1 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Starter</h3>
-              <p class="text-sm text-slate-500 font-medium">Para empresas con envíos ocasionales.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-4xl font-bold"><span class="animate-number" data-value="49">0</span>€</span>
-                <span class="text-slate-500 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-4xl font-bold"><span class="animate-number" data-value="39">0</span>€</span>
-                  <span class="text-slate-500 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1 opacity-60">
-                  <span class="animate-number" data-value="468">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Hasta 10 envíos al mes
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Mapa de transportistas
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Notificaciones de entrega
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Empezar
-              ahora</button>
-          </div>
-          <!-- Card 2 (Featured) -->
-          <div
-            class="pricing-card featured bg-[#1A1A1A] text-white p-8 rounded-[32px] shadow-2xl flex flex-col items-start gap-6 transition-all h-full z-10">
-            <div class="w-full flex justify-between items-start">
-              <div>
-                <h3 class="text-xl font-bold mb-2">Business</h3>
-                <p class="text-sm text-slate-400 font-medium">Optimiza tu logística diaria.</p>
-              </div>
-              <span
-                class="bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest animate-pulse">Eficiente</span>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <div class="price-monthly">
-                <span class="text-5xl font-bold"><span class="animate-number" data-value="149">0</span>€</span>
-                <span class="text-slate-400 text-sm">/mes</span>
-              </div>
-              <div class="price-annual hidden">
-                <div>
-                  <span class="text-5xl font-bold"><span class="animate-number" data-value="119">0</span>€</span>
-                  <span class="text-slate-400 text-sm">/mes</span>
-                </div>
-                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-1 opacity-80">
-                  <span class="animate-number" data-value="1428">0</span>€ al año
-                </div>
-              </div>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-white/10 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Envíos ilimitados
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Panel de analíticas avanzado
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Gestión de albaranes digital
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
-                <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Verificación de conductores
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-white text-[#1A1A1A] font-bold text-sm hover:bg-slate-100 transition-colors shadow-lg">Comenzar
-              14 días gratis</button>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="pricing-card bg-white/70 backdrop-blur-xl p-8 rounded-[32px] border border-white/50 shadow-sm flex flex-col items-start gap-6 hover:shadow-xl transition-all h-full">
-            <div class="w-full">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise</h3>
-              <p class="text-sm text-slate-500 font-medium">Integración total para gran volumen.</p>
-            </div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-slate-900">Personalizado</span>
-            </div>
-            <ul class="space-y-4 flex-1 w-full border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Integración ERP completa
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Facturación consolidada
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Soporte estratégico dedicado
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Acceso multi-usuario y roles
-              </li>
-            </ul>
-            <button
-              class="btn-shine w-full py-4 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar
-              presupuesto</button>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    
     <!-- Footer -->
     <footer
       class="bg-white/60 backdrop-blur-xl rounded-[40px] shadow-2xl border border-white/30 p-6 z-10 w-full max-w-7xl mx-auto mb-5 relative md:p-16 md:mb-16">
@@ -4276,17 +3872,17 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-3 items-center justify-center">
           <a href="/register"
-            class="btn-shine magnetic-btn inline-flex bg-[#1A1A1A] text-white text-[14px] font-semibold px-4 py-3 rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl items-center gap-2 no-underline md:px-8">
-            Empezar prueba gratuita
+            class="btn-shine magnetic-btn inline-flex bg-black text-white text-[14px] font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all items-center gap-2 no-underline md:px-8">Empezar
+            prueba gratuita
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
           </a>
-          <a href="/auth/login.html"
-            class="magnetic-btn inline-flex bg-white border border-slate-300 text-slate-700 text-[14px] font-medium px-4 py-3 rounded-full hover:bg-slate-50 transition-all items-center gap-2 no-underline md:px-8">
-            Iniciar sesión
+          <a href="/acceso/login.html"
+            class="magnetic-btn inline-flex bg-slate-100 text-slate-800 text-[14px] font-medium px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all items-center gap-2 no-underline md:px-8">Iniciar
+            sesión
           </a>
         </div>
       </div>
@@ -4979,8 +4575,7 @@
     }
     // Set current year
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    // Initialize Lucide icons
-    lucide.createIcons();
+    // Initialize Lucide icons reateIcons();
   </script>
   <script>
     // Dashboard page navigation
@@ -5024,7 +4619,7 @@
       }
       if (targetLink) {
         targetLink.classList.add('bg-[#EAE5DC]', 'text-slate-900');
-        targetLink.classList.remove('text-slate-500');
+        targetLink.classList.remove('text-ate-500');
       }
     }
   </script>
@@ -5240,7 +4835,7 @@
         item.addEventListener('click', () => { closeMobileMenu(); });
       });
       /* ---- Nav always visible (fixed) ---- */
-      // Nav stays fixed at all times per user request
+      // Nav stays fixed at all times rest
     })();
   </script>
   <script>
@@ -5269,124 +4864,90 @@
           page.classList.add('hidden');
           document.body.style.overflow = '';
         }
-      }
-      return false;
+      } false;
     }
   </script>
   <!-- Pricing Section Scripts -->
   <script>
     (function () {
-      // -- State --------------------------------------------------------------
+      // -- State --
       var isAnnual = false;
       var selectedCategory = 'transportistas';
-      var isPricingInView = false;
 
-      // -- DOM References -----------------------------------------------------
+      // -- DOM References --
       var billingToggle = document.getElementById('billing-toggle');
       var billingKnob = document.getElementById('billing-knob');
       var labelMensual = document.getElementById('label-mensual');
       var labelAnual = document.getElementById('label-anual');
       var personaTabs = document.querySelectorAll('.persona-tab');
-      var transportistasPlans = document.getElementById('plans-transportistas');
-      var flotasPlans = document.getElementById('plans-flotas');
-      var generadoresPlans = document.getElementById('plans-generadores');
-      var allPlans = [transportistasPlans, flotasPlans, generadoresPlans].filter(Boolean);
+      var allPlans = [
+        document.getElementById('plans-transportistas'),
+        document.getElementById('plans-flotas'),
+        document.getElementById('plans-generadores')
+      ].filter(Boolean);
 
-      // -- GSAP Animations -----------------------------------------------------
+      // -- Animations --
       function animatePricingHeader() {
-        const tl = gsap.timeline({});
-
-        tl.fromTo("#precios .section-label",
+        gsap.fromTo("#precios .section-label",
           { opacity: 0, y: 30, filter: "blur(5px)" },
-          { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }
-        )
-          .fromTo(".pricing-word",
-            { opacity: 0, y: 40, rotateX: -30, filter: "blur(10px)" },
-            { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)", duration: 1, stagger: 0.05, ease: "power4.out" },
-            "-=0.6"
-          )
-          .fromTo("#precios .section-desc",
-            { opacity: 0, y: 20, filter: "blur(5px)" },
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power2.out" },
-            "-=0.7"
-          )
-          .fromTo(".pricing-header-reveal",
-            { opacity: 0, y: 30, scale: 0.95 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.15, ease: "back.out(1.7)" },
-            "-=0.5"
-          );
+          { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: "#precios", start: "top 80%" } }
+        );
+        gsap.fromTo("#precios .section-title",
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.1, ease: "power3.out", scrollTrigger: { trigger: "#precios", start: "top 80%" } }
+        );
+        gsap.fromTo("#precios .section-desc",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power2.out", scrollTrigger: { trigger: "#precios", start: "top 80%" } }
+        );
       }
 
       function animateCardsEntrance(container) {
         if (!container) return;
         const cards = container.querySelectorAll('.pricing-card');
         gsap.fromTo(cards,
-          { opacity: 0, y: 70, scale: 0.92, rotateX: 5, filter: "blur(4px)" },
+          { opacity: 0, y: 50, scale: 0.95, filter: "blur(4px)" },
           {
-            opacity: 1, y: 0, scale: 1, rotateX: 0, filter: "blur(0px)",
-            duration: 0.85, stagger: 0.1, ease: "power3.out",
-            onComplete: () => {
-              // Ensure filter/transform doesn't mess with hover effects
-              cards.forEach(c => {
-                c.style.filter = '';
-                c.style.transform = '';
-              });
+            opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.8, stagger: 0.1, ease: "power3.out", onComplete: () => {
+              cards.forEach(c => { c.style.filter = ''; c.style.transform = ''; });
             }
           }
         );
-        setTimeout(animatePrices, 300);
       }
 
-      function resetCards(container) {
-        if (!container) return;
-        gsap.set(container.querySelectorAll('.pricing-card'), {
-          opacity: 0, y: 70, scale: 0.92, rotateX: 5, filter: "blur(4px)"
-        });
-      }
-
-      // -- Number Animation ----------------------------------------------------
-      function animateNumber(element, targetValue, duration) {
-        duration = duration || 800;
-        if (!element) return;
-        var obj = { val: 0 };
-        gsap.to(obj, {
-          val: targetValue,
-          duration: duration / 1000,
-          ease: "power2.out",
-          onUpdate: function () {
-            element.textContent = Math.round(obj.val);
-          }
-        });
-      }
-
-      function animatePrices() {
-        var visibleContainer = document.querySelector('.plans-category:not(.hidden)');
-        if (!visibleContainer) return;
-        var selector = isAnnual ? '.price-annual:not(.hidden)' : '.price-monthly:not(.hidden)';
-        visibleContainer.querySelectorAll(selector + ' .animate-number').forEach(function (el, i) {
-          var target = parseInt(el.dataset.value) || 0;
-          el.textContent = '0';
-          setTimeout(function () { animateNumber(el, target, 700); }, i * 60);
-        });
-      }
-
-      // -- Billing Toggle Logic ------------------------------------------------
+      // -- Billing Toggle Logic --
       function updateBillingUI() {
+        if (!billingKnob || !labelMensual || !labelAnual) return;
         if (isAnnual) {
           gsap.to(billingKnob, { x: 24, duration: 0.4, ease: "back.inOut(2)" });
-          labelMensual.classList.replace('text-slate-700', 'text-slate-500');
-          labelAnual.classList.replace('text-slate-500', 'text-slate-700');
+          labelMensual.classList.remove('text-slate-900');
+          labelMensual.classList.add('text-slate-500');
+          labelAnual.classList.remove('text-slate-500');
+          labelAnual.classList.add('text-slate-900');
         } else {
           gsap.to(billingKnob, { x: 0, duration: 0.4, ease: "back.inOut(2)" });
-          labelMensual.classList.replace('text-slate-500', 'text-slate-700');
-          labelAnual.classList.replace('text-slate-700', 'text-slate-500');
+          labelMensual.classList.remove('text-slate-500');
+          labelMensual.classList.add('text-slate-900');
+          labelAnual.classList.remove('text-slate-900');
+          labelAnual.classList.add('text-slate-500');
         }
 
-        document.querySelectorAll('.price-monthly').forEach(el => el.classList.toggle('hidden', isAnnual));
-        document.querySelectorAll('.price-annual').forEach(el => el.classList.toggle('hidden', !isAnnual));
-
-        // Re-animate prices with a slight delay
-        setTimeout(animatePrices, 50);
+        document.querySelectorAll('.price-monthly').forEach(el => {
+          if (isAnnual) {
+            el.classList.add('hidden');
+          } else {
+            el.classList.remove('hidden');
+            gsap.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+          }
+        });
+        document.querySelectorAll('.price-annual').forEach(el => {
+          if (!isAnnual) {
+            el.classList.add('hidden');
+          } else {
+            el.classList.remove('hidden');
+            gsap.fromTo(el, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+          }
+        });
       }
 
       if (billingToggle) {
@@ -5396,30 +4957,7 @@
         });
       }
 
-      // -- Category Tabs Logic -------------------------------------------------
-      function showPlansForCategory(category) {
-        selectedCategory = category;
-        const currentContainer = getVisiblePlansContainer();
-        const targetContainer = document.getElementById('plans-' + category);
-
-        if (!targetContainer || currentContainer === targetContainer) return;
-
-        // Animate out current
-        if (currentContainer) {
-          gsap.to(currentContainer.querySelectorAll('.pricing-card'), {
-            opacity: 0, y: -20, scale: 0.95, filter: "blur(5px)", duration: 0.3, stagger: 0.05,
-            onComplete: () => {
-              allPlans.forEach(c => c.classList.add('hidden'));
-              targetContainer.classList.remove('hidden');
-              animateCardsEntrance(targetContainer);
-            }
-          });
-        } else {
-          targetContainer.classList.remove('hidden');
-          animateCardsEntrance(targetContainer);
-        }
-      }
-
+      // -- Category Tabs Logic --
       function getVisiblePlansContainer() {
         return document.querySelector('.plans-category:not(.hidden)');
       }
@@ -5439,33 +4977,47 @@
           tab.querySelector('div:first-child').classList.remove('bg-slate-100');
           tab.querySelector('div:first-child').classList.add('bg-[#1A1A1A]', 'text-white');
 
-          showPlansForCategory(category);
+          selectedCategory = category;
+          const currentContainer = getVisiblePlansContainer();
+          const targetContainer = document.getElementById('plans-' + category);
+
+          if (!targetContainer || currentContainer === targetContainer) return;
+
+          // Animate out current
+          if (currentContainer) {
+            gsap.to(currentContainer.querySelectorAll('.pricing-card'), {
+              opacity: 0, y: -20, scale: 0.95, filter: "blur(5px)", duration: 0.3, stagger: 0.05,
+              onComplete: () => {
+                allPlans.forEach(c => c.classList.add('hidden'));
+                targetContainer.classList.remove('hidden');
+                animateCardsEntrance(targetContainer);
+              }
+            });
+          } else {
+            targetContainer.classList.remove('hidden');
+            animateCardsEntrance(targetContainer);
+          }
         });
       });
 
-      // -- Init ---------------------------------------------------------------
+      // -- Init --
       function initPricing() {
         animatePricingHeader();
-
-        // Initial entrance
         ScrollTrigger.create({
           trigger: "#precios",
           start: "top 70%",
           onEnter: () => {
-            isPricingInView = true;
             const container = getVisiblePlansContainer();
             if (container) animateCardsEntrance(container);
           }
         });
       }
 
-      // Wait for ScrollTrigger and GSAP to be ready
       if (document.readyState === 'complete') {
         initPricing();
       } else {
         window.addEventListener('load', initPricing);
       }
-
     })();
 
     // AUTH CHECK script
